@@ -32,18 +32,26 @@ namespace prjEstacionamento.Sources.DAO
             base.comando.Connection = base.conexao;
         }
 
-        public void InserirMensalista(Mensalista mensalista)
+        public void InserirEndereco(Endereco endereco)
         {
             try
             {
-                var paramNome = new SqlParameter("@NOME", mensalista.Nome);
-                var paramEnderecoId = new SqlParameter("@ENDERECOID", mensalista.EnderecoId);
-                var paramAtivo = new SqlParameter("@ATIVO", true);
+                var paramLogradouro = new SqlParameter("@LOGRADOURO", endereco.Logradouro);
+                var paramNumero = new SqlParameter("@NUMERO", endereco.Numero);
+                var paramBairro = new SqlParameter("@BAIRRO", endereco.Bairro);
+                var paramCidade = new SqlParameter("@CIDADE", endereco.Cidade);
+                var paramEstado = new SqlParameter("@ESTADO", endereco.Estado);
+                var paramCEP = new SqlParameter("@CEP", endereco.CEP);
+                var paramTelefone = new SqlParameter("@NUMERO", endereco.Telefone);
 
                 base.comando.CommandText = Insert;
-                base.comando.Parameters.Add(paramNome);
-                base.comando.Parameters.Add(paramEnderecoId);
-                base.comando.Parameters.Add(paramAtivo);
+                base.comando.Parameters.Add(paramLogradouro);
+                base.comando.Parameters.Add(paramNumero);
+                base.comando.Parameters.Add(paramBairro);
+                base.comando.Parameters.Add(paramCidade);
+                base.comando.Parameters.Add(paramEstado);
+                base.comando.Parameters.Add(paramCEP);
+                base.comando.Parameters.Add(paramTelefone);
 
                 base.conexao.Open();
                 base.comando.ExecuteNonQuery();
@@ -55,18 +63,18 @@ namespace prjEstacionamento.Sources.DAO
             }
         }
 
-        public DataTable ListarMensalistas()
+        public DataTable ListarEnderecos()
         {
             try
             {
-                var tabelaMensalistas = new DataTable();
+                var tabelaEnderecos = new DataTable();
 
                 base.comando.CommandText = Select;
                 var dataReader = base.comando.ExecuteReader();
 
-                tabelaMensalistas.Load(dataReader);
+                tabelaEnderecos.Load(dataReader);
 
-                return tabelaMensalistas;
+                return tabelaEnderecos;
             }
             finally
             {
