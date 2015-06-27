@@ -47,6 +47,12 @@
     <Compile Include="Sources\Class\Parametros.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
     <Compile Include="Sources\DAO\daoParametros.cs" />
+    <Compile Include="Sources\Forms\frmControleEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmControleEntrada.Designer.cs">
+      <DependentUpon>frmControleEntrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Forms\frmParametros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sources\Forms\frmControleEntrada.resx">
+      <DependentUpon>frmControleEntrada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmParametros.resx">
       <DependentUpon>frmParametros.cs</DependentUpon>
     </EmbeddedResource>
