@@ -1,0 +1,205 @@
+﻿namespace prjEstacionamento.Sources.Forms
+{
+    partial class frmControleEntrada
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.tpPrincipal = new System.Windows.Forms.TabControl();
+            this.tpPesquisa = new System.Windows.Forms.TabPage();
+            this.tpCadastro = new System.Windows.Forms.TabPage();
+            this.cbModelo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPlaca = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCor = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDataEntrada = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.tpPrincipal.SuspendLayout();
+            this.tpCadastro.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // tpPrincipal
+            // 
+            this.tpPrincipal.Controls.Add(this.tpPesquisa);
+            this.tpPrincipal.Controls.Add(this.tpCadastro);
+            this.tpPrincipal.Location = new System.Drawing.Point(12, 12);
+            this.tpPrincipal.Name = "tpPrincipal";
+            this.tpPrincipal.SelectedIndex = 0;
+            this.tpPrincipal.Size = new System.Drawing.Size(482, 324);
+            this.tpPrincipal.TabIndex = 0;
+            // 
+            // tpPesquisa
+            // 
+            this.tpPesquisa.Location = new System.Drawing.Point(4, 22);
+            this.tpPesquisa.Name = "tpPesquisa";
+            this.tpPesquisa.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPesquisa.Size = new System.Drawing.Size(474, 298);
+            this.tpPesquisa.TabIndex = 0;
+            this.tpPesquisa.Text = "Pesquisa";
+            this.tpPesquisa.UseVisualStyleBackColor = true;
+            // 
+            // tpCadastro
+            // 
+            this.tpCadastro.Controls.Add(this.btnCancelar);
+            this.tpCadastro.Controls.Add(this.btnOK);
+            this.tpCadastro.Controls.Add(this.label4);
+            this.tpCadastro.Controls.Add(this.txtDataEntrada);
+            this.tpCadastro.Controls.Add(this.label3);
+            this.tpCadastro.Controls.Add(this.txtCor);
+            this.tpCadastro.Controls.Add(this.label2);
+            this.tpCadastro.Controls.Add(this.txtPlaca);
+            this.tpCadastro.Controls.Add(this.label1);
+            this.tpCadastro.Controls.Add(this.cbModelo);
+            this.tpCadastro.Location = new System.Drawing.Point(4, 22);
+            this.tpCadastro.Name = "tpCadastro";
+            this.tpCadastro.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCadastro.Size = new System.Drawing.Size(474, 298);
+            this.tpCadastro.TabIndex = 1;
+            this.tpCadastro.Text = "Cadastro";
+            this.tpCadastro.UseVisualStyleBackColor = true;
+            // 
+            // cbModelo
+            // 
+            this.cbModelo.FormattingEnabled = true;
+            this.cbModelo.Location = new System.Drawing.Point(6, 32);
+            this.cbModelo.Name = "cbModelo";
+            this.cbModelo.Size = new System.Drawing.Size(209, 21);
+            this.cbModelo.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Modelo:";
+            // 
+            // txtPlaca
+            // 
+            this.txtPlaca.Location = new System.Drawing.Point(230, 32);
+            this.txtPlaca.Mask = "AAA-0000";
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(60, 20);
+            this.txtPlaca.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(227, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Placa:";
+            // 
+            // txtCor
+            // 
+            this.txtCor.Location = new System.Drawing.Point(308, 32);
+            this.txtCor.Name = "txtCor";
+            this.txtCor.Size = new System.Drawing.Size(158, 20);
+            this.txtCor.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(305, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Cor:";
+            // 
+            // txtDataEntrada
+            // 
+            this.txtDataEntrada.Location = new System.Drawing.Point(6, 93);
+            this.txtDataEntrada.Mask = "00/00/0000 90:00:00";
+            this.txtDataEntrada.Name = "txtDataEntrada";
+            this.txtDataEntrada.Size = new System.Drawing.Size(177, 20);
+            this.txtDataEntrada.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Data/Hora Entrada:";
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(308, 269);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 8;
+            this.btnOK.Text = "&OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(391, 269);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // frmControleEntrada
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(506, 348);
+            this.Controls.Add(this.tpPrincipal);
+            this.Name = "frmControleEntrada";
+            this.Text = "Controle Entrada";
+            this.tpPrincipal.ResumeLayout(false);
+            this.tpCadastro.ResumeLayout(false);
+            this.tpCadastro.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TabControl tpPrincipal;
+        private System.Windows.Forms.TabPage tpPesquisa;
+        private System.Windows.Forms.TabPage tpCadastro;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtPlaca;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbModelo;
+        private System.Windows.Forms.MaskedTextBox txtDataEntrada;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label label4;
+    }
+}
