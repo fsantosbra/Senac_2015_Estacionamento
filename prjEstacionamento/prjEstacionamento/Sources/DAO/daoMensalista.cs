@@ -24,12 +24,12 @@ namespace prjEstacionamento.Sources.DAO
             base.comando.Connection = base.conexao;
         }
 
-        public void InserirParametro(Mensalista parametro)
+        public void InserirMensalista(Mensalista mensalista)
         {
             try
             {
-                var paramNome = new SqlParameter("@NOME", parametro.Nome);
-                var paramValor = new SqlParameter("@VALOR", parametro.Valor);
+                var paramNome = new SqlParameter("@NOME", mensalista.Nome);
+                var paramValor = new SqlParameter("@VALOR", mensalista.Valor);
 
                 base.comando.CommandText = Insert;
                 base.comando.Parameters.Add(paramNome);
@@ -46,7 +46,7 @@ namespace prjEstacionamento.Sources.DAO
             }
         }
 
-        public DataTable ListarParametros()
+        public DataTable ListarMensalistas()
         {
             try
             {
