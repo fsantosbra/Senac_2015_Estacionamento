@@ -10,21 +10,18 @@ namespace prjEstacionamento.Sources.Class
     class Parametros
     {
 
-        private string Nome { get; set; }
-        private string Valor { get; set; }
+        public string Nome { get; set; }
+        public string Valor { get; set; }
 
         public Parametros()
         {
 
         }
 
-        public string TestaConexao()
+        public void InserirParametro(Parametros parametro)
         {
             var daoParametro = new daoParametros();
-
-            var estadoconexao = daoParametro.TestaConexao();
-
-            return estadoconexao;
+            daoParametro.InserirParametro(parametro);
         }
 
 
