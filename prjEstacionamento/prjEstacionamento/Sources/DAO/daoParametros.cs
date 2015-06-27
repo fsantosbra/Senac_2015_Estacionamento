@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,15 @@ namespace prjEstacionamento.Sources.DAO
 
         public daoParametros()
         {
-            base.conexao = new SqlConnection();
+            base.conexao = new SqlConnection(base.connString);
             base.comando = new SqlCommand();
         }
         
+        public string TestaConexao()
+        {
+            base.conexao.Open();
 
+            return base.conexao.State.ToString();
+        }
     }
 }
