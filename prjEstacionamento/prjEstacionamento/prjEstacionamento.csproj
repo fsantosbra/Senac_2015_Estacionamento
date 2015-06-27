@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sources\Class\Mensalista.cs" />
+    <Compile Include="Sources\Class\TipoVeiculo.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
     <Compile Include="Sources\DAO\daoMensalista.cs" />
+    <Compile Include="Sources\DAO\daoTipoVeiculo.cs" />
     <Compile Include="Sources\Forms\ControleVagas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +74,12 @@
     </Compile>
     <Compile Include="Sources\Forms\frmSeuForm.designer.cs">
       <DependentUpon>frmSeuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\frmTipoVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmTipoVeiculo.designer.cs">
+      <DependentUpon>frmTipoVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Sources\Forms\Menu.cs">
       <SubType>Form</SubType>
@@ -108,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmSeuForm.resx">
       <DependentUpon>frmSeuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmTipoVeiculo.resx">
+      <DependentUpon>frmTipoVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

@@ -35,7 +35,10 @@ namespace prjEstacionamento
 
         private void cadastroDeVeículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.IsMdiContainer = true;
+            frmTipoVeiculo frmTipoVeiculo = new frmTipoVeiculo();
+            frmTipoVeiculo.MdiParent = this;
+            frmTipoVeiculo.Show();
         }
 
         private void cadastroDeSaídaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,6 +119,14 @@ namespace prjEstacionamento
              * É necessário alterar todas instâncias da classe frmSeuForm para o nome da classe do seu
              * form. Para acessar o código do evento Click para o seu Form, 
              * dê um duplo clique no item desejado. */
+        }
+
+        private void cadastroDeMensalistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            frmCrudMensalista frmMensalista= new frmCrudMensalista();
+            frmMensalista.MdiParent = this;
+            frmMensalista.Show();
         }
     }
 }

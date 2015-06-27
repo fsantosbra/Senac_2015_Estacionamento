@@ -29,11 +29,11 @@ namespace prjEstacionamento.Sources.DAO
             try
             {
                 var paramNome = new SqlParameter("@NOME", mensalista.Nome);
-                var paramValor = new SqlParameter("@VALOR", mensalista.Valor);
+                //var paramValor = new SqlParameter("@VALOR", mensalista.Valor);
 
                 base.comando.CommandText = Insert;
                 base.comando.Parameters.Add(paramNome);
-                base.comando.Parameters.Add(paramValor);
+                //base.comando.Parameters.Add(paramValor);
 
                 base.conexao.Open();
                 base.comando.ExecuteNonQuery();
