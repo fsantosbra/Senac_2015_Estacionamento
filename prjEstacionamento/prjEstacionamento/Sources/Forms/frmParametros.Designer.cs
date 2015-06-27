@@ -37,7 +37,7 @@
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
@@ -74,7 +74,7 @@
             // 
             this.tbCadastro.Controls.Add(this.txtValor);
             this.tbCadastro.Controls.Add(this.txtNome);
-            this.tbCadastro.Controls.Add(this.button1);
+            this.tbCadastro.Controls.Add(this.btnSalvar);
             this.tbCadastro.Controls.Add(this.lblValor);
             this.tbCadastro.Controls.Add(this.lblNome);
             this.tbCadastro.Location = new System.Drawing.Point(4, 22);
@@ -136,14 +136,15 @@
             this.lblValor.TabIndex = 1;
             this.lblValor.Text = "Valor";
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(30, 197);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(30, 197);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 2;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtNome
             // 
@@ -188,7 +189,7 @@
         private System.Windows.Forms.DataGridView dgvParametros;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblNome;
     }

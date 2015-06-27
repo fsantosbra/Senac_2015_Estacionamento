@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prjEstacionamento.Sources.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace prjEstacionamento
         public frmParametros()
         {
             InitializeComponent();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            var parametro = new Parametros();
+            var estado = parametro.TestaConexao();
+            MessageBox.Show(estado);
         }
     }
 }
