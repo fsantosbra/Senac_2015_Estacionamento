@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace prjEstacionamento.Sources.Forms
 {
-    public partial class frmCrudMensalista : Form
+    public partial class frmPrecoAvulso : Form
     {
-        public frmCrudMensalista()
+        public frmPrecoAvulso()
         {
             InitializeComponent();
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
