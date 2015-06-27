@@ -43,22 +43,22 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtPlaca = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTipoVeiculo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCEP = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -160,9 +160,9 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtValor);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.maskedTextBox2);
+            this.groupBox2.Controls.Add(this.txtPlaca);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cmbTipoVeiculo);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(325, 17);
             this.groupBox2.Name = "groupBox2";
@@ -212,7 +212,7 @@
             this.txtValor.Location = new System.Drawing.Point(9, 124);
             this.txtValor.Mask = "#.###,00";
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.Size = new System.Drawing.Size(71, 20);
             this.txtValor.TabIndex = 22;
             // 
             // label10
@@ -224,13 +224,13 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Valor";
             // 
-            // maskedTextBox2
+            // txtPlaca
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(9, 85);
-            this.maskedTextBox2.Mask = "AAA-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(71, 20);
-            this.maskedTextBox2.TabIndex = 17;
+            this.txtPlaca.Location = new System.Drawing.Point(9, 85);
+            this.txtPlaca.Mask = "AAA-0000";
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(71, 20);
+            this.txtPlaca.TabIndex = 17;
             // 
             // label9
             // 
@@ -241,13 +241,13 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Placa:";
             // 
-            // comboBox1
+            // cmbTipoVeiculo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 18;
+            this.cmbTipoVeiculo.FormattingEnabled = true;
+            this.cmbTipoVeiculo.Location = new System.Drawing.Point(9, 42);
+            this.cmbTipoVeiculo.Name = "cmbTipoVeiculo";
+            this.cmbTipoVeiculo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoVeiculo.TabIndex = 18;
             // 
             // label8
             // 
@@ -260,17 +260,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.txtTelefone);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtCEP);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtEstado);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtCidade);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtBairro);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtNumero);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtLogradouro);
             this.groupBox1.Controls.Add(this.label1);
@@ -283,13 +283,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Mensalista";
             // 
-            // maskedTextBox1
+            // txtTelefone
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(113, 218);
-            this.maskedTextBox1.Mask = "(99) 0000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 16;
+            this.txtTelefone.Location = new System.Drawing.Point(113, 218);
+            this.txtTelefone.Mask = "(99) 0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefone.TabIndex = 16;
             // 
             // label7
             // 
@@ -317,12 +317,13 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "CEP:";
             // 
-            // textBox7
+            // txtEstado
             // 
-            this.textBox7.Location = new System.Drawing.Point(248, 171);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(34, 20);
-            this.textBox7.TabIndex = 11;
+            this.txtEstado.Location = new System.Drawing.Point(248, 171);
+            this.txtEstado.MaxLength = 2;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(34, 20);
+            this.txtEstado.TabIndex = 11;
             // 
             // label5
             // 
@@ -333,12 +334,12 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Estado:";
             // 
-            // textBox6
+            // txtCidade
             // 
-            this.textBox6.Location = new System.Drawing.Point(7, 171);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(235, 20);
-            this.textBox6.TabIndex = 9;
+            this.txtCidade.Location = new System.Drawing.Point(7, 171);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(235, 20);
+            this.txtCidade.TabIndex = 9;
             // 
             // label4
             // 
@@ -365,12 +366,12 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Bairro:";
             // 
-            // textBox4
+            // txtNumero
             // 
-            this.textBox4.Location = new System.Drawing.Point(248, 80);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(44, 20);
-            this.textBox4.TabIndex = 5;
+            this.txtNumero.Location = new System.Drawing.Point(248, 80);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(44, 20);
+            this.txtNumero.TabIndex = 5;
             // 
             // label2
             // 
@@ -447,24 +448,24 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.MaskedTextBox txtCEP;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTipoVeiculo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox txtPlaca;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox txtValor;
         private System.Windows.Forms.Label label11;

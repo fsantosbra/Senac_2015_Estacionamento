@@ -22,9 +22,9 @@ namespace prjEstacionamento.Sources.Class
             this.daoMensalista = new daoMensalista();
         }
 
-        public void InserirMensalista(Mensalista mensalista)
+        public int InserirMensalista(Mensalista mensalista)
         {
-            this.daoMensalista.InserirMensalista(mensalista);
+            return this.daoMensalista.InserirMensalista(mensalista);
         }
 
         public DataTable ListarParametros()

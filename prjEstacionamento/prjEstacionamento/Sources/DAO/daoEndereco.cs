@@ -12,7 +12,8 @@ namespace prjEstacionamento.Sources.DAO
     class daoEndereco : daoBase
     {
         private string Insert = @"INSERT INTO ENDERECO VALUES (@LOGRADOURO, @NUMERO, @BAIRRO, @CIDADE, 
-                                                               @ESTADO, @CEP, @TELEFONE)";
+                                                               @ESTADO, @CEP, @TELEFONE);
+                                    SELECT SCOPE_IDENTITY();";
         private string Update = @"UPDATE MENSALISTA SET Logradouro = @LOGRADOURO, Numero = @NUMERO, 
                                     Bairro = @BAIRRO, Cidade = @CIDADE, Estado = @ESTADO, 
                                     CEP = @CEP, Telefone = @TELEFONE 
@@ -32,8 +33,10 @@ namespace prjEstacionamento.Sources.DAO
             base.comando.Connection = base.conexao;
         }
 
-        public void InserirEndereco(Endereco endereco)
+        public int InserirEndereco(Endereco endereco)
         {
+            var enderecoId = 0;
+
             try
             {
                 var paramLogradouro = new SqlParameter("@LOGRADOURO", endereco.Logradouro);
@@ -54,13 +57,15 @@ namespace prjEstacionamento.Sources.DAO
                 base.comando.Parameters.Add(paramTelefone);
 
                 base.conexao.Open();
-                base.comando.ExecuteNonQuery();
+                enderecoId = Convert.ToInt32(base.comando.ExecuteScalar());
             }
             finally
             {
                 base.conexao.Close();
                 base.comando.Parameters.Clear();
             }
+
+            return enderecoId;
         }
 
         public DataTable ListarEnderecos()
