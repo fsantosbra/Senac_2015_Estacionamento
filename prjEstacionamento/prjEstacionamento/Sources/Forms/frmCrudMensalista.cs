@@ -28,6 +28,8 @@ namespace prjEstacionamento.Sources.Forms
             var enderecoId = AdicionaEndereco();
             var mensalistaid = AdicionaMensalista(enderecoId);
             AdicionaPrecoMensalista(mensalistaid, Convert.ToInt32(cmbTipoVeiculo.SelectedValue));
+
+            MessageBox.Show("Mensalista cadastrado com sucesso!");
         }
 
         private void AdicionaPrecoMensalista(int mensalistaid, int tipoVeiculoId)

@@ -45,7 +45,7 @@ namespace prjEstacionamento.Sources.DAO
                 var paramCidade = new SqlParameter("@CIDADE", endereco.Cidade);
                 var paramEstado = new SqlParameter("@ESTADO", endereco.Estado);
                 var paramCEP = new SqlParameter("@CEP", endereco.CEP);
-                var paramTelefone = new SqlParameter("@NUMERO", endereco.Telefone);
+                var paramTelefone = new SqlParameter("@TELEFONE", endereco.Telefone);
 
                 base.comando.CommandText = Insert;
                 base.comando.Parameters.Add(paramLogradouro);

@@ -210,7 +210,6 @@
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(9, 124);
-            this.txtValor.Mask = "#.###,00";
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(71, 20);
             this.txtValor.TabIndex = 22;

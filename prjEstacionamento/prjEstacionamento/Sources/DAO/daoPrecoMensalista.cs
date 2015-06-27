@@ -39,7 +39,7 @@ namespace prjEstacionamento.Sources.DAO
             try
             {
                 var paramMensalistaId = new SqlParameter("@MENSALISTAID", precoMensalista.MensalistaId);
-                var paramTipoVeiculoId = new SqlParameter("@TIPOVEICULOID", precoMensalista.MensalistaId);
+                var paramTipoVeiculoId = new SqlParameter("@TIPOVEICULOID", precoMensalista.TipoVeiculoId);
                 var paramPlaca = new SqlParameter("@PLACA", precoMensalista.Placa);
                 var paramValor = new SqlParameter("@VALOR", precoMensalista.Valor);
                 var paramDataInicioVigencia = new SqlParameter("@DATAINICIOVIGENCIA", precoMensalista.DataInicioVigencia);
