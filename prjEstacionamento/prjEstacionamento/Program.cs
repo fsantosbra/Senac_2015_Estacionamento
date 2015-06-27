@@ -11,7 +11,7 @@ namespace prjEstacionamento
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        /// Mais um teste do Fernando
+        /// Mais um teste do Fernando 2
         [STAThread]
         static void Main()
         {
