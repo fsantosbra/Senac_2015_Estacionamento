@@ -12,6 +12,12 @@ namespace prjEstacionamento.Sources.Class
         private string Nome { get; set; }
         private string Valor { get; set; }
 
+        public Parametros()
+        {
+
+        }
+
+
 
 
 
