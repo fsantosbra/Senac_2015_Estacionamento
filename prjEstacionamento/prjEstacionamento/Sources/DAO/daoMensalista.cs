@@ -11,11 +11,11 @@ namespace prjEstacionamento.Sources.DAO
 {
     class daoMensalista : daoBase
     {
-        private string Insert = @"INSERT INTO PARAMETROS VALUES (@NOME, @VALOR)";
-        private string Update = @"UPDATE PARAMETROS SET Nome = @NOME, Valor = @VALOR WHERE Id = @Id";
-        private string Delete = @"DELETE FROM PARAMETROS WHERE Id = @Id";
-        private string Select = @"SELECT NOME, VALOR FROM PARAMETROS";
-        private string SelectSpecific = @"SELECT NOME, VALOR FROM PARAMETROS WHERE NOME LIKE '%'+ @NOME +'%'";
+        private string Insert = @"INSERT INTO MENSALISTA VALUES (@NOME, @ENDERECOID, @ATIVO)";
+        private string Update = @"UPDATE MENSALISTA SET Nome = @NOME, EnderecoId = @ENDERECOID, Ativo = @ATIVO WHERE Id = @Id";
+        private string Delete = @"DELETE FROM MENSALISTA WHERE Id = @Id";
+        private string Select = @"SELECT ID, NOME, ENDERECOID, ATIVO FROM MENSALISTA";
+        private string SelectSpecific = @"SELECT ID, NOME, ENDERECOID, ATIVO FROM MENSALISTA WHERE NOME LIKE '%'+ @NOME +'%'";
 
         public daoMensalista()
         {
@@ -28,16 +28,17 @@ namespace prjEstacionamento.Sources.DAO
         {
             try
             {
-                //var paramNome = new SqlParameter("@NOME", mensalista.Nome);
-                //var paramValor = new SqlParameter("@VALOR", mensalista.Valor);
+                var paramNome = new SqlParameter("@NOME", mensalista.Nome);
+                var paramEnderecoId = new SqlParameter("@ENDERECOID", mensalista.EnderecoId);
+                var paramAtivo = new SqlParameter("@ATIVO", true);
 
-                //base.comando.CommandText = Insert;
-                //base.comando.Parameters.Add(paramNome);
-                //base.comando.Parameters.Add(paramValor);
+                base.comando.CommandText = Insert;
+                base.comando.Parameters.Add(paramNome);
+                base.comando.Parameters.Add(paramEnderecoId);
+                base.comando.Parameters.Add(paramAtivo);
 
-                //base.conexao.Open();
-                //base.comando.ExecuteNonQuery();
-
+                base.conexao.Open();
+                base.comando.ExecuteNonQuery();
             }
             finally
             {
@@ -50,18 +51,19 @@ namespace prjEstacionamento.Sources.DAO
         {
             try
             {
-                var tabelaParametros = new DataTable();
+                var tabelaMensalistas = new DataTable();
 
                 base.comando.CommandText = Select;
                 var dataReader = base.comando.ExecuteReader();
 
-                tabelaParametros.Load(dataReader);
+                tabelaMensalistas.Load(dataReader);
 
-                return tabelaParametros;
+                return tabelaMensalistas;
             }
             finally
             {
-
+                base.conexao.Close();
+                base.comando.Parameters.Clear();
             }
         }
     }

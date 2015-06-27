@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="Sources\Class\Endereco.cs" />
     <Compile Include="Sources\Class\Mensalista.cs" />
+    <Compile Include="Sources\Class\PrecoMensalista.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
+    <Compile Include="Sources\DAO\daoEndereco.cs" />
     <Compile Include="Sources\DAO\daoMensalista.cs" />
     <Compile Include="Sources\Forms\ControleVagas.cs">
       <SubType>Form</SubType>
