@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tpPrincipal = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.gbChavePesquisa = new System.Windows.Forms.GroupBox();
+            this.dgVagasEntrada = new System.Windows.Forms.DataGridView();
             this.tpCadastro = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbMensalista = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,15 +47,15 @@
             this.txtPlaca = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbModelo = new System.Windows.Forms.ComboBox();
-            this.cbMensalista = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dgVagasEntrada = new System.Windows.Forms.DataGridView();
-            this.gbChavePesquisa = new System.Windows.Forms.GroupBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.senacpos2015DataSet = new prjEstacionamento.senacpos2015DataSet();
+            this.mensalistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mensalistaTableAdapter = new prjEstacionamento.senacpos2015DataSetTableAdapters.MensalistaTableAdapter();
             this.tpPrincipal.SuspendLayout();
             this.tpPesquisa.SuspendLayout();
-            this.tpCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVagasEntrada)).BeginInit();
+            this.tpCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalistaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tpPrincipal
@@ -75,6 +81,32 @@
             this.tpPesquisa.Text = "Pesquisa";
             this.tpPesquisa.UseVisualStyleBackColor = true;
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(510, 15);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(83, 23);
+            this.btnPesquisar.TabIndex = 2;
+            this.btnPesquisar.Text = "&Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // gbChavePesquisa
+            // 
+            this.gbChavePesquisa.Location = new System.Drawing.Point(6, 6);
+            this.gbChavePesquisa.Name = "gbChavePesquisa";
+            this.gbChavePesquisa.Size = new System.Drawing.Size(498, 157);
+            this.gbChavePesquisa.TabIndex = 1;
+            this.gbChavePesquisa.TabStop = false;
+            this.gbChavePesquisa.Text = "Chave de Pesquisa";
+            // 
+            // dgVagasEntrada
+            // 
+            this.dgVagasEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVagasEntrada.Location = new System.Drawing.Point(6, 169);
+            this.dgVagasEntrada.Name = "dgVagasEntrada";
+            this.dgVagasEntrada.Size = new System.Drawing.Size(587, 169);
+            this.dgVagasEntrada.TabIndex = 0;
+            // 
             // tpCadastro
             // 
             this.tpCadastro.Controls.Add(this.label5);
@@ -96,6 +128,27 @@
             this.tpCadastro.TabIndex = 1;
             this.tpCadastro.Text = "Cadastro";
             this.tpCadastro.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(230, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Mensalista:";
+            // 
+            // cbMensalista
+            // 
+            this.cbMensalista.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.mensalistaBindingSource, "Nome", true));
+            this.cbMensalista.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mensalistaBindingSource, "Nome", true));
+            this.cbMensalista.DataSource = this.mensalistaBindingSource;
+            this.cbMensalista.DisplayMember = "Nome";
+            this.cbMensalista.FormattingEnabled = true;
+            this.cbMensalista.Location = new System.Drawing.Point(230, 91);
+            this.cbMensalista.Name = "cbMensalista";
+            this.cbMensalista.Size = new System.Drawing.Size(236, 21);
+            this.cbMensalista.TabIndex = 10;
             // 
             // btnCancelar
             // 
@@ -183,48 +236,19 @@
             this.cbModelo.Size = new System.Drawing.Size(209, 21);
             this.cbModelo.TabIndex = 0;
             // 
-            // cbMensalista
+            // senacpos2015DataSet
             // 
-            this.cbMensalista.FormattingEnabled = true;
-            this.cbMensalista.Location = new System.Drawing.Point(230, 91);
-            this.cbMensalista.Name = "cbMensalista";
-            this.cbMensalista.Size = new System.Drawing.Size(236, 21);
-            this.cbMensalista.TabIndex = 10;
+            this.senacpos2015DataSet.DataSetName = "senacpos2015DataSet";
+            this.senacpos2015DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label5
+            // mensalistaBindingSource
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(230, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Mensalista:";
+            this.mensalistaBindingSource.DataMember = "Mensalista";
+            this.mensalistaBindingSource.DataSource = this.senacpos2015DataSet;
             // 
-            // dgVagasEntrada
+            // mensalistaTableAdapter
             // 
-            this.dgVagasEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVagasEntrada.Location = new System.Drawing.Point(6, 169);
-            this.dgVagasEntrada.Name = "dgVagasEntrada";
-            this.dgVagasEntrada.Size = new System.Drawing.Size(587, 169);
-            this.dgVagasEntrada.TabIndex = 0;
-            // 
-            // gbChavePesquisa
-            // 
-            this.gbChavePesquisa.Location = new System.Drawing.Point(6, 6);
-            this.gbChavePesquisa.Name = "gbChavePesquisa";
-            this.gbChavePesquisa.Size = new System.Drawing.Size(498, 157);
-            this.gbChavePesquisa.TabIndex = 1;
-            this.gbChavePesquisa.TabStop = false;
-            this.gbChavePesquisa.Text = "Chave de Pesquisa";
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(510, 15);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(83, 23);
-            this.btnPesquisar.TabIndex = 2;
-            this.btnPesquisar.Text = "&Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.mensalistaTableAdapter.ClearBeforeFill = true;
             // 
             // frmControleEntrada
             // 
@@ -234,11 +258,14 @@
             this.Controls.Add(this.tpPrincipal);
             this.Name = "frmControleEntrada";
             this.Text = "Controle Entrada";
+            this.Load += new System.EventHandler(this.frmControleEntrada_Load);
             this.tpPrincipal.ResumeLayout(false);
             this.tpPesquisa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgVagasEntrada)).EndInit();
             this.tpCadastro.ResumeLayout(false);
             this.tpCadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgVagasEntrada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalistaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,5 +290,8 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.GroupBox gbChavePesquisa;
         private System.Windows.Forms.DataGridView dgVagasEntrada;
+        private senacpos2015DataSet senacpos2015DataSet;
+        private System.Windows.Forms.BindingSource mensalistaBindingSource;
+        private senacpos2015DataSetTableAdapters.MensalistaTableAdapter mensalistaTableAdapter;
     }
 }

@@ -22,5 +22,12 @@ namespace prjEstacionamento.Sources.Forms
         {
             this.Dispose();
         }
+
+        private void frmControleEntrada_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'senacpos2015DataSet.Mensalista' table. You can move, or remove it, as needed.
+            this.mensalistaTableAdapter.Fill(this.senacpos2015DataSet.Mensalista);
+
+        }
     }
 }
