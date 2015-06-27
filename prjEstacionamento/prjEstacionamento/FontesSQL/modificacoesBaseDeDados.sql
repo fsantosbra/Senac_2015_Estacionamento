@@ -1,0 +1,1 @@
+alter table SenacPos2015.dbo.LogEstacionamento add constraint DF_DataAgora default getdate() for DataAcao
