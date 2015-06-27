@@ -15,7 +15,7 @@ namespace prjEstacionamento.Sources.Forms
         public frmControleEntrada()
         {
             InitializeComponent();
-            txtDataEntrada.Text = DateTime.Now.ToString;
+            txtDataEntrada.Text = String.Format("{DD/MM/YYYY HH24:MI:SS}", DateTime.Now.Date);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
