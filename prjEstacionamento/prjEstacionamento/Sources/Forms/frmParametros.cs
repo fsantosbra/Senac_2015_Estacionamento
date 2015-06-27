@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prjEstacionamento
 {
-    public partial class Form1 : Form
+    public partial class frmParametros : Form
     {
-        public Form1()
+        public frmParametros()
         {
             InitializeComponent();
         }
