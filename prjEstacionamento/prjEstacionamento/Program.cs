@@ -16,7 +16,7 @@ namespace prjEstacionamento
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmParametros());
+            Application.Run(new Menu());
         }
     }
 }
