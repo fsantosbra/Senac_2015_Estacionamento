@@ -44,20 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sources\Class\Parametros.cs" />
+    <Compile Include="Sources\Class\Mensalista.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
-    <Compile Include="Sources\DAO\daoParametros.cs" />
+    <Compile Include="Sources\DAO\daoMensalista.cs" />
     <Compile Include="Sources\Forms\frmControleEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sources\Forms\frmControleEntrada.Designer.cs">
       <DependentUpon>frmControleEntrada.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sources\Forms\frmParametros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sources\Forms\frmParametros.Designer.cs">
-      <DependentUpon>frmParametros.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,9 +66,6 @@
     </Compile>
     <EmbeddedResource Include="Sources\Forms\frmControleEntrada.resx">
       <DependentUpon>frmControleEntrada.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sources\Forms\frmParametros.resx">
-      <DependentUpon>frmParametros.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -91,8 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FontesSQL\modificacoesBaseDeDados.sql" />
+    <Content Include="FontesSQL\prjEstacionamento.sql" />
     <Content Include="FontesSQL\STP_GravarLogEstacionamento.sql" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
