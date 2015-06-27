@@ -49,16 +49,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>senacpos2015DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="senacpos2015DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>senacpos2015DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="senacpos2015DataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>senacpos2015DataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Sources\Class\Mensalista.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
     <Compile Include="Sources\DAO\daoMensalista.cs" />
@@ -138,28 +128,6 @@
     </None>
     <None Include="senacpos2015DataSet.xss">
       <DependentUpon>senacpos2015DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="senacpos2015DataSet1.xsc">
-      <DependentUpon>senacpos2015DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="senacpos2015DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>senacpos2015DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="senacpos2015DataSet1.xss">
-      <DependentUpon>senacpos2015DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="senacpos2015DataSet2.xsc">
-      <DependentUpon>senacpos2015DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="senacpos2015DataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>senacpos2015DataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="senacpos2015DataSet2.xss">
-      <DependentUpon>senacpos2015DataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
