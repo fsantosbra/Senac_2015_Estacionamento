@@ -12,7 +12,9 @@ namespace prjEstacionamento.Sources.Class
     {
 
         public string Nome { get; set; }
-        public string Valor { get; set; }
+        public int EnderecoId { get; set; }
+        public bool Ativo { get; set; }
+
         public daoMensalista daoMensalista { get; set; }
 
         public Mensalista()
@@ -20,19 +22,15 @@ namespace prjEstacionamento.Sources.Class
             this.daoMensalista = new daoMensalista();
         }
 
-        public void InserirParametro(Mensalista parametro)
+        public void InserirMensalista(Mensalista mensalista)
         {
-            this.daoMensalista.InserirParametro(parametro);
+            this.daoMensalista.InserirMensalista(mensalista);
         }
 
         public DataTable ListarParametros()
         {
-            return this.daoMensalista.ListarParametros();
+            return this.daoMensalista.ListarMensalistas();
         }
-
-
-
-
-
+        
     }
 }
