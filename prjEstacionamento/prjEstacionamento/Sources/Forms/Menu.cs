@@ -73,7 +73,10 @@ namespace prjEstacionamento
 
         private void gerenciamentoDeMensalistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.IsMdiContainer = true;
+            frmGerenciarMensalista frmGerenciarMensalista = new frmGerenciarMensalista();
+            frmGerenciarMensalista.MdiParent = this;
+            frmGerenciarMensalista.Show();
         }
 
         private void vagasToolStripMenuItem_Click(object sender, EventArgs e)
