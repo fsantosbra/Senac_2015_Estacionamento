@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tpPrincipal = new System.Windows.Forms.TabControl();
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -36,7 +35,6 @@
             this.dgVagasEntrada = new System.Windows.Forms.DataGridView();
             this.tpCadastro = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbMensalista = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,15 +45,11 @@
             this.txtPlaca = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbModelo = new System.Windows.Forms.ComboBox();
-            this.senacpos2015DataSet = new prjEstacionamento.senacpos2015DataSet();
-            this.mensalistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mensalistaTableAdapter = new prjEstacionamento.senacpos2015DataSetTableAdapters.MensalistaTableAdapter();
+            this.cbMensalista = new System.Windows.Forms.ComboBox();
             this.tpPrincipal.SuspendLayout();
             this.tpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVagasEntrada)).BeginInit();
             this.tpCadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mensalistaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tpPrincipal
@@ -109,8 +103,8 @@
             // 
             // tpCadastro
             // 
-            this.tpCadastro.Controls.Add(this.label5);
             this.tpCadastro.Controls.Add(this.cbMensalista);
+            this.tpCadastro.Controls.Add(this.label5);
             this.tpCadastro.Controls.Add(this.btnCancelar);
             this.tpCadastro.Controls.Add(this.btnOK);
             this.tpCadastro.Controls.Add(this.label4);
@@ -137,18 +131,6 @@
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Mensalista:";
-            // 
-            // cbMensalista
-            // 
-            this.cbMensalista.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.mensalistaBindingSource, "Nome", true));
-            this.cbMensalista.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mensalistaBindingSource, "Nome", true));
-            this.cbMensalista.DataSource = this.mensalistaBindingSource;
-            this.cbMensalista.DisplayMember = "Nome";
-            this.cbMensalista.FormattingEnabled = true;
-            this.cbMensalista.Location = new System.Drawing.Point(230, 91);
-            this.cbMensalista.Name = "cbMensalista";
-            this.cbMensalista.Size = new System.Drawing.Size(236, 21);
-            this.cbMensalista.TabIndex = 10;
             // 
             // btnCancelar
             // 
@@ -236,19 +218,13 @@
             this.cbModelo.Size = new System.Drawing.Size(209, 21);
             this.cbModelo.TabIndex = 0;
             // 
-            // senacpos2015DataSet
+            // cbMensalista
             // 
-            this.senacpos2015DataSet.DataSetName = "senacpos2015DataSet";
-            this.senacpos2015DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mensalistaBindingSource
-            // 
-            this.mensalistaBindingSource.DataMember = "Mensalista";
-            this.mensalistaBindingSource.DataSource = this.senacpos2015DataSet;
-            // 
-            // mensalistaTableAdapter
-            // 
-            this.mensalistaTableAdapter.ClearBeforeFill = true;
+            this.cbMensalista.FormattingEnabled = true;
+            this.cbMensalista.Location = new System.Drawing.Point(230, 92);
+            this.cbMensalista.Name = "cbMensalista";
+            this.cbMensalista.Size = new System.Drawing.Size(236, 21);
+            this.cbMensalista.TabIndex = 12;
             // 
             // frmControleEntrada
             // 
@@ -264,8 +240,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgVagasEntrada)).EndInit();
             this.tpCadastro.ResumeLayout(false);
             this.tpCadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mensalistaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,12 +260,9 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbMensalista;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.GroupBox gbChavePesquisa;
         private System.Windows.Forms.DataGridView dgVagasEntrada;
-        private senacpos2015DataSet senacpos2015DataSet;
-        private System.Windows.Forms.BindingSource mensalistaBindingSource;
-        private senacpos2015DataSetTableAdapters.MensalistaTableAdapter mensalistaTableAdapter;
+        private System.Windows.Forms.ComboBox cbMensalista;
     }
 }
