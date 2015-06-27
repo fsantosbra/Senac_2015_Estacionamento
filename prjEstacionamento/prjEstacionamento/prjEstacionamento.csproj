@@ -55,6 +55,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\Forms\frmGerenciarMensalista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmGerenciarMensalista.Designer.cs">
+      <DependentUpon>frmGerenciarMensalista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\frmSeuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmSeuForm.designer.cs">
+      <DependentUpon>frmSeuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\Menu.designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Forms\frmCrudMensalista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +93,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmCrudMensalista.resx">
       <DependentUpon>frmCrudMensalista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmGerenciarMensalista.resx">
+      <DependentUpon>frmGerenciarMensalista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmSeuForm.resx">
+      <DependentUpon>frmSeuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
