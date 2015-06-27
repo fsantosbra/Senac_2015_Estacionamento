@@ -21,7 +21,7 @@ namespace prjEstacionamento.Sources.DAO
         {
             base.conexao.Open();
 
-            return base.conexao.State.ToString();
+            return base.conexao.State.ToString() + "Deu Certo";
         }
     }
 }
