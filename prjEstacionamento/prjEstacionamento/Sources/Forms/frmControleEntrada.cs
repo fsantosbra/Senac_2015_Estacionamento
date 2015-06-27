@@ -15,11 +15,23 @@ namespace prjEstacionamento.Sources.Forms
         public frmControleEntrada()
         {
             InitializeComponent();
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+
+        private void txtPlaca_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtCor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
