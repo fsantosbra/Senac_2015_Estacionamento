@@ -21,8 +21,10 @@ namespace prjEstacionamento
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             var parametro = new Parametros();
-            var estado = parametro.TestaConexao();
-            MessageBox.Show(estado);
+            parametro.Nome = txtNome.Text;
+            parametro.Valor = txtValor.Text;
+
+            parametro.InserirParametro(parametro);            
         }
     }
 }
