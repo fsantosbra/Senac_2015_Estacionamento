@@ -28,15 +28,23 @@ namespace prjEstacionamento.Sources.DAO
         {
             try
             {
+<<<<<<< HEAD
                 var paramNome = new SqlParameter("@NOME", mensalista.Nome);
                 //var paramValor = new SqlParameter("@VALOR", mensalista.Valor);
 
                 base.comando.CommandText = Insert;
                 base.comando.Parameters.Add(paramNome);
+=======
+                //var paramNome = new SqlParameter("@NOME", mensalista.Nome);
+                //var paramValor = new SqlParameter("@VALOR", mensalista.Valor);
+
+                //base.comando.CommandText = Insert;
+                //base.comando.Parameters.Add(paramNome);
+>>>>>>> 651154a3d36ee3e2642813c2f7f24c2e9da3e37e
                 //base.comando.Parameters.Add(paramValor);
 
-                base.conexao.Open();
-                base.comando.ExecuteNonQuery();
+                //base.conexao.Open();
+                //base.comando.ExecuteNonQuery();
 
             }
             finally

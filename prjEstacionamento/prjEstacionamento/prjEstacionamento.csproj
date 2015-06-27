@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\Class\Endereco.cs" />
     <Compile Include="Sources\Class\Mensalista.cs" />
     <Compile Include="Sources\Class\TipoVeiculo.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
