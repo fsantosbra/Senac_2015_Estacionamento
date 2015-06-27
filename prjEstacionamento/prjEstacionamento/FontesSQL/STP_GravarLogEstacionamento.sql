@@ -16,10 +16,8 @@ begin
 
 	begin try
 		begin tran
-
-		insert into senacpos2015.dbo.LogEstacionamento (AcessoId, Descricao)
-		values(@AcessoID, @DescricaoAcao)
-
+			insert into senacpos2015.dbo.LogEstacionamento (AcessoId, Descricao)
+			values(@AcessoID, @DescricaoAcao)
 		commit tran
 	end try
 	begin catch

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using prjEstacionamento.Sources.Forms;
 
 namespace prjEstacionamento
 {
@@ -59,7 +60,10 @@ namespace prjEstacionamento
 
         private void controleDeEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.IsMdiContainer = true;
+            frmControleEntrada frmControleEntrada = new frmControleEntrada();
+            frmControleEntrada.MdiParent = this;
+            frmControleEntrada.Show();
         }
 
         private void controleDeSaídaToolStripMenuItem_Click(object sender, EventArgs e)

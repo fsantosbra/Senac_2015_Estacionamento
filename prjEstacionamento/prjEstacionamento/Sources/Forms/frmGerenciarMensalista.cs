@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace prjEstacionamento.Sources.Forms
 {
-    public partial class frmControleEntrada : Form
+    public partial class frmGerenciarMensalista : Form
     {
-        public frmControleEntrada()
+        public frmGerenciarMensalista()
         {
             InitializeComponent();
-            txtDataEntrada.Text = DateTime.Now.ToString();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
     }
 }
