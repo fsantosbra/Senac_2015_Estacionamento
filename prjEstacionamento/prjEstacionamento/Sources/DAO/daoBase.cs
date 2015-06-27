@@ -17,7 +17,7 @@ namespace prjEstacionamento.Sources.DAO
 
         public daoBase()
         {
-            conexao = new SqlConnection();
+            conexao = new SqlConnection(connString);
             comando = new SqlCommand();
         }
 
