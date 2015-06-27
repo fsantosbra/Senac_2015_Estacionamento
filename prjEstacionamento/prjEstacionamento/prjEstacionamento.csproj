@@ -85,6 +85,9 @@
     <EmbeddedResource Include="Sources\Forms\frmControleEntrada.resx">
       <DependentUpon>frmControleEntrada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmGerenciarMensalista.resx">
+      <DependentUpon>frmGerenciarMensalista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmSeuForm.resx">
       <DependentUpon>frmSeuForm.cs</DependentUpon>
     </EmbeddedResource>
