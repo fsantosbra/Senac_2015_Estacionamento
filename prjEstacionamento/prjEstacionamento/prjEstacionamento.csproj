@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\Class\Parametros.cs" />
+    <Compile Include="Sources\DAO\daoParametros.cs" />
     <Compile Include="Sources\Forms\frmParametros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,10 +79,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sources\Class\" />
-    <Folder Include="Sources\DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
