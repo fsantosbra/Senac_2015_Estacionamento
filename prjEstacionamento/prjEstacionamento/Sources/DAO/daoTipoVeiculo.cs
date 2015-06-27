@@ -10,7 +10,7 @@ namespace prjEstacionamento.Sources.DAO
 {
     class daoTipoVeiculo : daoBase
     {
-        private string Select = @"SELECT ID, NOME FROM TIPOVEICULO";
+        private string Select = @"SELECT ID, TIPO FROM TIPOVEICULO";
 
 
         public daoTipoVeiculo()
@@ -27,6 +27,7 @@ namespace prjEstacionamento.Sources.DAO
                 var tabelaTipoVeiculo = new DataTable();
 
                 base.comando.CommandText = Select;
+                base.conexao.Open();
                 var dataReader = base.comando.ExecuteReader();
 
                 tabelaTipoVeiculo.Load(dataReader);

@@ -64,9 +64,9 @@ namespace prjEstacionamento
         private void controleDeEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
-            frmControleEntrada frmControleEntrada = new frmControleEntrada();
-            frmControleEntrada.MdiParent = this;
-            frmControleEntrada.Show();
+            //frmControleEntrada frmControleEntrada = new frmControleEntrada();
+            //frmControleEntrada.MdiParent = this;
+            //frmControleEntrada.Show();
         }
 
         private void controleDeSaídaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +130,22 @@ namespace prjEstacionamento
             frmCrudMensalista frmMensalista= new frmCrudMensalista();
             frmMensalista.MdiParent = this;
             frmMensalista.Show();
+        }
+
+        private void avulsoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            frmPrecoAvulso frmPrecoAvulso = new frmPrecoAvulso();
+            frmPrecoAvulso.MdiParent = this;
+            frmPrecoAvulso.Show();
+        }
+
+        private void mensalistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            frmPrecoMensalista frmPrecoMensalista = new frmPrecoMensalista();
+            frmPrecoMensalista.MdiParent = this;
+            frmPrecoMensalista.Show();
         }
     }
 }

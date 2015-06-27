@@ -39,6 +39,7 @@
             this.tabelaDePreçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeVeículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeSaídaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeMensalistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,8 @@
             this.controleDeEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controleDeSaídaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciamentoDeMensalistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDeMensalistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.avulsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mensalistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +132,9 @@
             // 
             // tabelaDePreçosToolStripMenuItem
             // 
+            this.tabelaDePreçosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.avulsoToolStripMenuItem,
+            this.mensalistaToolStripMenuItem});
             this.tabelaDePreçosToolStripMenuItem.Name = "tabelaDePreçosToolStripMenuItem";
             this.tabelaDePreçosToolStripMenuItem.Size = new System.Drawing.Size(306, 28);
             this.tabelaDePreçosToolStripMenuItem.Text = "Cadastro de Tabela de Preços";
@@ -148,6 +153,13 @@
             this.cadastroDeSaídaToolStripMenuItem.Size = new System.Drawing.Size(306, 28);
             this.cadastroDeSaídaToolStripMenuItem.Text = "Cadastro de Parceiros";
             this.cadastroDeSaídaToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeSaídaToolStripMenuItem_Click);
+            // 
+            // cadastroDeMensalistasToolStripMenuItem
+            // 
+            this.cadastroDeMensalistasToolStripMenuItem.Name = "cadastroDeMensalistasToolStripMenuItem";
+            this.cadastroDeMensalistasToolStripMenuItem.Size = new System.Drawing.Size(306, 28);
+            this.cadastroDeMensalistasToolStripMenuItem.Text = "Cadastro de Mensalistas";
+            this.cadastroDeMensalistasToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeMensalistasToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -289,12 +301,19 @@
             this.gerenciamentoDeMensalistasToolStripMenuItem.Text = "Gerenciamento de Mensalistas";
             this.gerenciamentoDeMensalistasToolStripMenuItem.Click += new System.EventHandler(this.gerenciamentoDeMensalistasToolStripMenuItem_Click);
             // 
-            // cadastroDeMensalistasToolStripMenuItem
+            // avulsoToolStripMenuItem
             // 
-            this.cadastroDeMensalistasToolStripMenuItem.Name = "cadastroDeMensalistasToolStripMenuItem";
-            this.cadastroDeMensalistasToolStripMenuItem.Size = new System.Drawing.Size(306, 28);
-            this.cadastroDeMensalistasToolStripMenuItem.Text = "Cadastro de Mensalistas";
-            this.cadastroDeMensalistasToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeMensalistasToolStripMenuItem_Click);
+            this.avulsoToolStripMenuItem.Name = "avulsoToolStripMenuItem";
+            this.avulsoToolStripMenuItem.Size = new System.Drawing.Size(175, 28);
+            this.avulsoToolStripMenuItem.Text = "Avulso";
+            this.avulsoToolStripMenuItem.Click += new System.EventHandler(this.avulsoToolStripMenuItem_Click);
+            // 
+            // mensalistaToolStripMenuItem
+            // 
+            this.mensalistaToolStripMenuItem.Name = "mensalistaToolStripMenuItem";
+            this.mensalistaToolStripMenuItem.Size = new System.Drawing.Size(175, 28);
+            this.mensalistaToolStripMenuItem.Text = "Mensalista";
+            this.mensalistaToolStripMenuItem.Click += new System.EventHandler(this.mensalistaToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -349,5 +368,7 @@
         private System.Windows.Forms.ToolStripMenuItem logDeOperaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeMensalistasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem avulsoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mensalistaToolStripMenuItem;
     }
 }

@@ -59,12 +59,6 @@
     <Compile Include="Sources\Forms\ControleVagas.designer.cs">
       <DependentUpon>ControleVagas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sources\Forms\frmControleEntrada.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sources\Forms\frmControleEntrada.Designer.cs">
-      <DependentUpon>frmControleEntrada.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\Forms\frmGerenciarMensalista.cs">
@@ -72,6 +66,18 @@
     </Compile>
     <Compile Include="Sources\Forms\frmGerenciarMensalista.Designer.cs">
       <DependentUpon>frmGerenciarMensalista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\frmPrecoAvulso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmPrecoAvulso.designer.cs">
+      <DependentUpon>frmPrecoAvulso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\frmPrecoMensalista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmPrecoMensalista.designer.cs">
+      <DependentUpon>frmPrecoMensalista.cs</DependentUpon>
     </Compile>
     <Compile Include="Sources\Forms\frmSeuForm.cs">
       <SubType>Form</SubType>
@@ -109,14 +115,17 @@
     <EmbeddedResource Include="Sources\Forms\ControleVagas.resx">
       <DependentUpon>ControleVagas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sources\Forms\frmControleEntrada.resx">
-      <DependentUpon>frmControleEntrada.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmCrudMensalista.resx">
       <DependentUpon>frmCrudMensalista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmGerenciarMensalista.resx">
       <DependentUpon>frmGerenciarMensalista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmPrecoAvulso.resx">
+      <DependentUpon>frmPrecoAvulso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmPrecoMensalista.resx">
+      <DependentUpon>frmPrecoMensalista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmSeuForm.resx">
       <DependentUpon>frmSeuForm.cs</DependentUpon>
