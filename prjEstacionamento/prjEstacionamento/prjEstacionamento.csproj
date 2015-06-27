@@ -44,9 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\Class\Endereco.cs" />
     <Compile Include="Sources\Class\Mensalista.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
     <Compile Include="Sources\DAO\daoMensalista.cs" />
+    <Compile Include="Sources\Forms\ControleVagas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\ControleVagas.designer.cs">
+      <DependentUpon>ControleVagas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Forms\frmControleEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +95,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sources\Forms\ControleVagas.resx">
+      <DependentUpon>ControleVagas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmControleEntrada.resx">
       <DependentUpon>frmControleEntrada.cs</DependentUpon>
     </EmbeddedResource>
