@@ -44,7 +44,7 @@
             // 
             // cbModelo
             // 
-            this.cbModelo.FormattingEnabled = true;
+            this.cbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbModelo.Location = new System.Drawing.Point(12, 32);
             this.cbModelo.Name = "cbModelo";
             this.cbModelo.Size = new System.Drawing.Size(186, 21);
@@ -61,8 +61,9 @@
             // 
             // txtPlaca
             // 
+            this.txtPlaca.AsciiOnly = true;
             this.txtPlaca.Location = new System.Drawing.Point(220, 32);
-            this.txtPlaca.Mask = "AAA-9999";
+            this.txtPlaca.Mask = ">AAA-9999";
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(58, 20);
             this.txtPlaca.TabIndex = 2;
@@ -78,6 +79,8 @@
             // 
             // cbCor
             // 
+            this.cbCor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbCor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbCor.FormattingEnabled = true;
             this.cbCor.Items.AddRange(new object[] {
             "PRATA",
@@ -126,7 +129,7 @@
             // 
             // cbMensalista
             // 
-            this.cbMensalista.FormattingEnabled = true;
+            this.cbMensalista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMensalista.Location = new System.Drawing.Point(220, 86);
             this.cbMensalista.Name = "cbMensalista";
             this.cbMensalista.Size = new System.Drawing.Size(242, 21);

@@ -55,6 +55,10 @@ namespace prjEstacionamento.Sources.Forms
                 MessageBox.Show("Obrigatório Preenchimento da Placa do Veículo");
                 txtPlaca.Focus();
                 return;
+            }else if(txtPlaca.Text.Trim().Count() < 8){
+                MessageBox.Show("Placa do Veículo Inválida! Favor Informar a Placa no Formato Correto.");
+                txtPlaca.Focus();
+                return;
             }
 
             if (cbCor.SelectedItem.ToString() == "")
@@ -72,6 +76,7 @@ namespace prjEstacionamento.Sources.Forms
 
             entradaVeiculo.inserirEntradaVeiculo(entradaVeiculo);
             MessageBox.Show("Entrada Registrada com Sucesso!");
+            this.Dispose();
 
 
         }
