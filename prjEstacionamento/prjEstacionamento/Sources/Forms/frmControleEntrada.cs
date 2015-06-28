@@ -34,5 +34,46 @@ namespace prjEstacionamento.Sources.Forms
         {
             this.Dispose();
         }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            var entradaVeiculo = new CadastroEntradaVeiculo();
+
+            entradaVeiculo.modeloId = Convert.ToInt32(cbModelo.SelectedValue);
+            entradaVeiculo.placa = txtPlaca.Text;
+            entradaVeiculo.dataEntrada = Convert.ToDateTime(txtDataHoraEntrada.Text);
+            entradaVeiculo.corVeiculo = cbCor.SelectedItem.ToString();
+            entradaVeiculo.mensalistaId = Convert.ToInt32(cbMensalista.SelectedValue);
+
+            if(txtDataHoraEntrada.Text.Trim() == ""){
+                MessageBox.Show("Obrigatório Preenchimento da Data de Entrada do Veículo");
+                txtDataHoraEntrada.Focus();
+                return;
+            }
+
+            if(txtPlaca.Text.Trim() == ""){
+                MessageBox.Show("Obrigatório Preenchimento da Placa do Veículo");
+                txtPlaca.Focus();
+                return;
+            }
+
+            if (cbCor.SelectedItem.ToString() == "")
+            {
+                MessageBox.Show("Obrigatório Preenchimento da Cor do Veículo");
+                cbCor.Focus();
+                return;
+            }
+
+            if(Convert.ToDateTime(txtDataHoraEntrada.Text) > DateTime.Now){
+                MessageBox.Show("Impossível Definir a Data de Entrada do Veículo MAIOR que a Data Atual");
+                txtDataHoraEntrada.Text = DateTime.Now.ToString();
+                return;
+            }
+
+            entradaVeiculo.inserirEntradaVeiculo(entradaVeiculo);
+            MessageBox.Show("Entrada Registrada com Sucesso!");
+
+
+        }
     }
 }

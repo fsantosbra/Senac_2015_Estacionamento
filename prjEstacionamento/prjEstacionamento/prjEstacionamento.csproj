@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\Class\CadastroEntradaVeiculo.cs" />
     <Compile Include="Sources\Class\CadastroVeiculo.cs" />
     <Compile Include="Sources\Class\Endereco.cs" />
     <Compile Include="Sources\Class\Mensalista.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Sources\DAO\daoEndereco.cs" />
     <Compile Include="Sources\DAO\daoMensalista.cs" />
     <Compile Include="Sources\DAO\daoTipoVeiculo.cs" />
+    <Compile Include="Sources\DAO\daoEntradaVeiculo.cs" />
     <Compile Include="Sources\DAO\daoVeiculos.cs" />
     <Compile Include="Sources\Forms\ControleVagas.cs">
       <SubType>Form</SubType>

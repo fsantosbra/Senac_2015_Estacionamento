@@ -30,7 +30,7 @@
         {
             this.cbModelo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtPlaca = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,13 +59,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Modelo:";
             // 
-            // maskedTextBox1
+            // txtPlaca
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(220, 32);
-            this.maskedTextBox1.Mask = "AAA-9999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(58, 20);
-            this.maskedTextBox1.TabIndex = 2;
+            this.txtPlaca.Location = new System.Drawing.Point(220, 32);
+            this.txtPlaca.Mask = "AAA-9999";
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(58, 20);
+            this.txtPlaca.TabIndex = 2;
             // 
             // label2
             // 
@@ -159,6 +159,7 @@
             this.btnOk.TabIndex = 11;
             this.btnOk.Text = "&OK";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // frmControleEntrada
             // 
@@ -176,7 +177,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbCor);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtPlaca);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbModelo);
             this.MaximizeBox = false;
@@ -193,7 +194,7 @@
 
         private System.Windows.Forms.ComboBox cbModelo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtPlaca;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbCor;
         private System.Windows.Forms.Label label3;
