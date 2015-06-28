@@ -58,6 +58,7 @@ namespace prjEstacionamento.Sources.DAO
                 var tabelaMensalistas = new DataTable();
 
                 base.comando.CommandText = Select;
+                base.conexao.Open();
                 var dataReader = base.comando.ExecuteReader();
 
                 tabelaMensalistas.Load(dataReader);

@@ -149,6 +149,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(474, 173);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnCancelar);
@@ -162,7 +164,10 @@
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbModelo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmControleEntrada";
+            this.ShowIcon = false;
             this.Text = "Controle de Entrada de Veículos";
             this.ResumeLayout(false);
             this.PerformLayout();

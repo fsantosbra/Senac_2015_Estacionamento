@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using prjEstacionamento.Sources.Class;
 
 namespace prjEstacionamento.Sources.Forms
 {
@@ -15,6 +16,13 @@ namespace prjEstacionamento.Sources.Forms
         public frmControleEntrada()
         {
             InitializeComponent();
+
+            txtDataHoraEntrada.Text = DateTime.Now.ToString();
+
+            var listaMensalista = new Mensalista();
+            cbMensalista.DataSource = listaMensalista.ListarParametros();
+            cbMensalista.ValueMember = "ID";
+            cbMensalista.DisplayMember = "NOME";
         }
     }
 }
