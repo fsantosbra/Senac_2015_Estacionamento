@@ -79,6 +79,20 @@
             // cbCor
             // 
             this.cbCor.FormattingEnabled = true;
+            this.cbCor.Items.AddRange(new object[] {
+            "PRATA",
+            "PRETO",
+            "BRANCO",
+            "CINZA",
+            "CHUMBO",
+            "AZUL",
+            "VERMELHO",
+            "MARROM",
+            "BEGE",
+            "VERDE",
+            "AMARELO",
+            "OURO",
+            "ROSA"});
             this.cbCor.Location = new System.Drawing.Point(294, 32);
             this.cbCor.Name = "cbCor";
             this.cbCor.Size = new System.Drawing.Size(168, 21);
@@ -135,6 +149,7 @@
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnOk
             // 

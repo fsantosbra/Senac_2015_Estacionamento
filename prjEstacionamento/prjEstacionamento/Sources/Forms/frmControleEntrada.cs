@@ -23,6 +23,16 @@ namespace prjEstacionamento.Sources.Forms
             cbMensalista.DataSource = listaMensalista.ListarParametros();
             cbMensalista.ValueMember = "ID";
             cbMensalista.DisplayMember = "NOME";
+
+            var listaModelo = new Modelo();
+            cbModelo.DataSource = listaModelo.listarModelos();
+            cbModelo.ValueMember = "ID";
+            cbModelo.DisplayMember = "MODELO";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
