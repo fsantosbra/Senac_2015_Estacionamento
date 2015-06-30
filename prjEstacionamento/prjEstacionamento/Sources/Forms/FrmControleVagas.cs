@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prjEstacionamento.Sources.Forms
 {
-    public partial class ControleVagas : Form
+    public partial class FrmControleVagas : Form
     {
-        public ControleVagas()
+        public FrmControleVagas()
         {
             InitializeComponent();
         }

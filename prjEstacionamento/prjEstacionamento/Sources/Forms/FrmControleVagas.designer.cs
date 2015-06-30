@@ -1,6 +1,6 @@
 ﻿namespace prjEstacionamento.Sources.Forms
 {
-    partial class ControleVagas
+    partial class FrmControleVagas
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblQtdAvulso = new System.Windows.Forms.Label();
+            this.lblQtdMensal = new System.Windows.Forms.Label();
+            this.lblQtdAvulsoDisp = new System.Windows.Forms.Label();
+            this.lblQtdMensalDisp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -78,61 +78,61 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Quantidade de Vagas Avulso Disponíveis: ";
             // 
-            // label5
+            // lblQtdAvulso
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(68, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 32);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "QtdAvulso";
+            this.lblQtdAvulso.AutoSize = true;
+            this.lblQtdAvulso.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdAvulso.Location = new System.Drawing.Point(68, 56);
+            this.lblQtdAvulso.Name = "lblQtdAvulso";
+            this.lblQtdAvulso.Size = new System.Drawing.Size(135, 32);
+            this.lblQtdAvulso.TabIndex = 4;
+            this.lblQtdAvulso.Text = "QtdAvulso";
             // 
-            // label6
+            // lblQtdMensal
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(66, 155);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 32);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "QtdMensal";
+            this.lblQtdMensal.AutoSize = true;
+            this.lblQtdMensal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdMensal.Location = new System.Drawing.Point(66, 155);
+            this.lblQtdMensal.Name = "lblQtdMensal";
+            this.lblQtdMensal.Size = new System.Drawing.Size(139, 32);
+            this.lblQtdMensal.TabIndex = 5;
+            this.lblQtdMensal.Text = "QtdMensal";
             // 
-            // label7
+            // lblQtdAvulsoDisp
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(300, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(185, 32);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "QtdAvulsoDisp";
+            this.lblQtdAvulsoDisp.AutoSize = true;
+            this.lblQtdAvulsoDisp.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdAvulsoDisp.Location = new System.Drawing.Point(300, 56);
+            this.lblQtdAvulsoDisp.Name = "lblQtdAvulsoDisp";
+            this.lblQtdAvulsoDisp.Size = new System.Drawing.Size(186, 32);
+            this.lblQtdAvulsoDisp.TabIndex = 6;
+            this.lblQtdAvulsoDisp.Text = "QtdAvulsoDisp";
             // 
-            // label8
+            // lblQtdMensalDisp
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(297, 155);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(190, 32);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "QtdMensalDisp";
+            this.lblQtdMensalDisp.AutoSize = true;
+            this.lblQtdMensalDisp.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdMensalDisp.Location = new System.Drawing.Point(297, 155);
+            this.lblQtdMensalDisp.Name = "lblQtdMensalDisp";
+            this.lblQtdMensalDisp.Size = new System.Drawing.Size(190, 32);
+            this.lblQtdMensalDisp.TabIndex = 7;
+            this.lblQtdMensalDisp.Text = "QtdMensalDisp";
             // 
-            // ControleVagas
+            // FrmControleVagas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(228)))), ((int)(((byte)(218)))));
             this.ClientSize = new System.Drawing.Size(557, 261);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblQtdMensalDisp);
+            this.Controls.Add(this.lblQtdAvulsoDisp);
+            this.Controls.Add(this.lblQtdMensal);
+            this.Controls.Add(this.lblQtdAvulso);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ControleVagas";
+            this.Name = "FrmControleVagas";
             this.Text = "Controle de Vagas";
             this.Load += new System.EventHandler(this.ControleVagas_Load);
             this.ResumeLayout(false);
@@ -146,9 +146,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblQtdAvulso;
+        private System.Windows.Forms.Label lblQtdMensal;
+        private System.Windows.Forms.Label lblQtdAvulsoDisp;
+        private System.Windows.Forms.Label lblQtdMensalDisp;
     }
 }
