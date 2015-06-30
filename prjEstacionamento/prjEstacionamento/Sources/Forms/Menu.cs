@@ -58,7 +58,10 @@ namespace prjEstacionamento
 
         private void controleDeVagasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.IsMdiContainer = true;
+            FrmControleVagas FrmControleVagas = new FrmControleVagas();
+            FrmControleVagas.MdiParent = this;
+            FrmControleVagas.Show();
         }
 
         private void controleDeEntradaToolStripMenuItem_Click(object sender, EventArgs e)
