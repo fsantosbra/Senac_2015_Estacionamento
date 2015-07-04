@@ -1,9 +1,10 @@
-﻿using prjEstacionamento.Sources.DAO;
+using prjEstacionamento.Sources.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace prjEstacionamento.Sources.Class
 {
@@ -12,18 +13,24 @@ namespace prjEstacionamento.Sources.Class
         public int Id { get; set; }
         public string TipoVeiculoId { get; set; }
         public int QtdeVagasTotal { get; set; }
-        public string QtdeMensalista { get; set; }
-        public string QtdeVagasTotalCorrente { get; set; }
-        public string QtdeMensalistaCorrente { get; set; }
+        public int QtdeMensalista { get; set; }
+        public int QtdeVagasTotalCorrente { get; set; }
+        public int QtdeMensalistaCorrente { get; set; }
+        
         public daoVagas daoVagas { get; set; }
         public Vagas()
         {
-            this.daoVagas = new daoVagas();
+            daoVagas = new daoVagas();
         }
 
         public int InserirVaga(Vagas vagas)
         {
-            return this.daoVagas.InserirVaga(vagas);
+            return daoVagas.InserirVaga(vagas);
+        }
+
+        public DataTable ListarVagas()
+        {
+            return daoVagas.ListarVagas();
         }
     }
 }
