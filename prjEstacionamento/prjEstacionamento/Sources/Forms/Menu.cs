@@ -36,9 +36,9 @@ namespace prjEstacionamento
         private void cadastroDeVeículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
-            frmTipoVeiculo frmTipoVeiculo = new frmTipoVeiculo();
-            frmTipoVeiculo.MdiParent = this;
-            frmTipoVeiculo.Show();
+            Frm_CadastroVeiculo frmCadastroVeiculo = new Frm_CadastroVeiculo();
+            frmCadastroVeiculo.MdiParent = this;
+            frmCadastroVeiculo.Show();
         }
 
         private void cadastroDeSaídaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +130,27 @@ namespace prjEstacionamento
             frmCrudMensalista frmMensalista= new frmCrudMensalista();
             frmMensalista.MdiParent = this;
             frmMensalista.Show();
+        }
+
+        private void avulsoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            frmPrecoAvulso frmPrecoAvulso = new frmPrecoAvulso();
+            frmPrecoAvulso.MdiParent = this;
+            frmPrecoAvulso.Show();
+        }
+
+        private void mensalistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            frmPrecoMensalista frmPrecoMensalista = new frmPrecoMensalista();
+            frmPrecoMensalista.MdiParent = this;
+            frmPrecoMensalista.Show();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

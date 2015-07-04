@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prjEstacionamento.Sources.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,15 @@ namespace prjEstacionamento.Sources.Class
         public string Estado { get; set; }
         public string CEP { get; set; }
         public string Telefone { get; set; }
-        
+        public daoEndereco daoEndereco { get; set; }
         public Endereco()
         {
-            
+            this.daoEndereco = new daoEndereco();
+        }
+
+        public int InserirEndereco(Endereco endereco)
+        {
+            return this.daoEndereco.InserirEndereco(endereco);
         }
     }
 }

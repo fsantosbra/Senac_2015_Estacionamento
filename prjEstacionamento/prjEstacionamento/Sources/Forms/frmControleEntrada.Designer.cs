@@ -28,286 +28,184 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tpPrincipal = new System.Windows.Forms.TabControl();
-            this.tpPesquisa = new System.Windows.Forms.TabPage();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.gbChavePesquisa = new System.Windows.Forms.GroupBox();
-            this.dgVagasEntrada = new System.Windows.Forms.DataGridView();
-            this.tpCadastro = new System.Windows.Forms.TabPage();
+            this.cbModelo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPlaca = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbCor = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDataHoraEntrada = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbMensalista = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDataEntrada = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCor = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtPlaca = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbModelo = new System.Windows.Forms.ComboBox();
-            this.senacpos2015DataSet = new prjEstacionamento.senacpos2015DataSet();
-            this.mensalistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mensalistaTableAdapter = new prjEstacionamento.senacpos2015DataSetTableAdapters.MensalistaTableAdapter();
-            this.senacpos2015DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.senacpos2015DataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tpPrincipal.SuspendLayout();
-            this.tpPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgVagasEntrada)).BeginInit();
-            this.tpCadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mensalistaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSetBindingSource1)).BeginInit();
+            this.btnOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tpPrincipal
+            // cbModelo
             // 
-            this.tpPrincipal.Controls.Add(this.tpPesquisa);
-            this.tpPrincipal.Controls.Add(this.tpCadastro);
-            this.tpPrincipal.Location = new System.Drawing.Point(12, 12);
-            this.tpPrincipal.Name = "tpPrincipal";
-            this.tpPrincipal.SelectedIndex = 0;
-            this.tpPrincipal.Size = new System.Drawing.Size(607, 370);
-            this.tpPrincipal.TabIndex = 0;
-            // 
-            // tpPesquisa
-            // 
-            this.tpPesquisa.Controls.Add(this.btnPesquisar);
-            this.tpPesquisa.Controls.Add(this.gbChavePesquisa);
-            this.tpPesquisa.Controls.Add(this.dgVagasEntrada);
-            this.tpPesquisa.Location = new System.Drawing.Point(4, 22);
-            this.tpPesquisa.Name = "tpPesquisa";
-            this.tpPesquisa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPesquisa.Size = new System.Drawing.Size(599, 344);
-            this.tpPesquisa.TabIndex = 0;
-            this.tpPesquisa.Text = "Pesquisa";
-            this.tpPesquisa.UseVisualStyleBackColor = true;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(510, 15);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(83, 23);
-            this.btnPesquisar.TabIndex = 2;
-            this.btnPesquisar.Text = "&Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // gbChavePesquisa
-            // 
-            this.gbChavePesquisa.Location = new System.Drawing.Point(6, 6);
-            this.gbChavePesquisa.Name = "gbChavePesquisa";
-            this.gbChavePesquisa.Size = new System.Drawing.Size(498, 157);
-            this.gbChavePesquisa.TabIndex = 1;
-            this.gbChavePesquisa.TabStop = false;
-            this.gbChavePesquisa.Text = "Chave de Pesquisa";
-            // 
-            // dgVagasEntrada
-            // 
-            this.dgVagasEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVagasEntrada.Location = new System.Drawing.Point(6, 169);
-            this.dgVagasEntrada.Name = "dgVagasEntrada";
-            this.dgVagasEntrada.Size = new System.Drawing.Size(587, 169);
-            this.dgVagasEntrada.TabIndex = 0;
-            // 
-            // tpCadastro
-            // 
-            this.tpCadastro.Controls.Add(this.cbMensalista);
-            this.tpCadastro.Controls.Add(this.label5);
-            this.tpCadastro.Controls.Add(this.btnCancelar);
-            this.tpCadastro.Controls.Add(this.btnOK);
-            this.tpCadastro.Controls.Add(this.label4);
-            this.tpCadastro.Controls.Add(this.txtDataEntrada);
-            this.tpCadastro.Controls.Add(this.label3);
-            this.tpCadastro.Controls.Add(this.txtCor);
-            this.tpCadastro.Controls.Add(this.label2);
-            this.tpCadastro.Controls.Add(this.txtPlaca);
-            this.tpCadastro.Controls.Add(this.label1);
-            this.tpCadastro.Controls.Add(this.cbModelo);
-            this.tpCadastro.Location = new System.Drawing.Point(4, 22);
-            this.tpCadastro.Name = "tpCadastro";
-            this.tpCadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCadastro.Size = new System.Drawing.Size(599, 344);
-            this.tpCadastro.TabIndex = 1;
-            this.tpCadastro.Text = "Cadastro";
-            this.tpCadastro.UseVisualStyleBackColor = true;
-            // 
-            // cbMensalista
-            // 
-            this.cbMensalista.DataSource = this.mensalistaBindingSource;
-            this.cbMensalista.DisplayMember = "Nome";
-            this.cbMensalista.FormattingEnabled = true;
-            this.cbMensalista.Location = new System.Drawing.Point(230, 92);
-            this.cbMensalista.Name = "cbMensalista";
-            this.cbMensalista.Size = new System.Drawing.Size(236, 21);
-            this.cbMensalista.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(230, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Mensalista:";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(518, 315);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(437, 315);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 8;
-            this.btnOK.Text = "&OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Data/Hora Entrada:";
-            // 
-            // txtDataEntrada
-            // 
-            this.txtDataEntrada.Location = new System.Drawing.Point(6, 92);
-            this.txtDataEntrada.Mask = "00/00/0000 90:00:00";
-            this.txtDataEntrada.Name = "txtDataEntrada";
-            this.txtDataEntrada.Size = new System.Drawing.Size(177, 20);
-            this.txtDataEntrada.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(305, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Cor:";
-            // 
-            // txtCor
-            // 
-            this.txtCor.Location = new System.Drawing.Point(308, 31);
-            this.txtCor.Name = "txtCor";
-            this.txtCor.Size = new System.Drawing.Size(158, 20);
-            this.txtCor.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(227, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Placa:";
-            // 
-            // txtPlaca
-            // 
-            this.txtPlaca.Location = new System.Drawing.Point(230, 31);
-            this.txtPlaca.Mask = "AAA-0000";
-            this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(60, 20);
-            this.txtPlaca.TabIndex = 2;
+            this.cbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbModelo.Location = new System.Drawing.Point(12, 32);
+            this.cbModelo.Name = "cbModelo";
+            this.cbModelo.Size = new System.Drawing.Size(186, 21);
+            this.cbModelo.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 15);
+            this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Modelo:";
             // 
-            // cbModelo
+            // txtPlaca
             // 
-            this.cbModelo.FormattingEnabled = true;
-            this.cbModelo.Location = new System.Drawing.Point(6, 31);
-            this.cbModelo.Name = "cbModelo";
-            this.cbModelo.Size = new System.Drawing.Size(209, 21);
-            this.cbModelo.TabIndex = 0;
+            this.txtPlaca.AsciiOnly = true;
+            this.txtPlaca.Location = new System.Drawing.Point(220, 32);
+            this.txtPlaca.Mask = ">AAA-9999";
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(58, 20);
+            this.txtPlaca.TabIndex = 2;
             // 
-            // senacpos2015DataSet
+            // label2
             // 
-            this.senacpos2015DataSet.DataSetName = "senacpos2015DataSet";
-            this.senacpos2015DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(217, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Placa:";
             // 
-            // mensalistaBindingSource
+            // cbCor
             // 
-            this.mensalistaBindingSource.DataMember = "Mensalista";
-            this.mensalistaBindingSource.DataSource = this.senacpos2015DataSet;
+            this.cbCor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbCor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCor.FormattingEnabled = true;
+            this.cbCor.Items.AddRange(new object[] {
+            "PRATA",
+            "PRETO",
+            "BRANCO",
+            "CINZA",
+            "CHUMBO",
+            "AZUL",
+            "VERMELHO",
+            "MARROM",
+            "BEGE",
+            "VERDE",
+            "AMARELO",
+            "OURO",
+            "ROSA"});
+            this.cbCor.Location = new System.Drawing.Point(294, 32);
+            this.cbCor.Name = "cbCor";
+            this.cbCor.Size = new System.Drawing.Size(168, 21);
+            this.cbCor.TabIndex = 4;
             // 
-            // mensalistaTableAdapter
+            // label3
             // 
-            this.mensalistaTableAdapter.ClearBeforeFill = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(291, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Cor:";
             // 
-            // senacpos2015DataSetBindingSource
+            // txtDataHoraEntrada
             // 
-            this.senacpos2015DataSetBindingSource.DataSource = this.senacpos2015DataSet;
-            this.senacpos2015DataSetBindingSource.Position = 0;
+            this.txtDataHoraEntrada.Location = new System.Drawing.Point(15, 87);
+            this.txtDataHoraEntrada.Mask = "00/00/0000 90:00:00";
+            this.txtDataHoraEntrada.Name = "txtDataHoraEntrada";
+            this.txtDataHoraEntrada.Size = new System.Drawing.Size(183, 20);
+            this.txtDataHoraEntrada.TabIndex = 6;
             // 
-            // senacpos2015DataSetBindingSource1
+            // label4
             // 
-            this.senacpos2015DataSetBindingSource1.DataSource = this.senacpos2015DataSet;
-            this.senacpos2015DataSetBindingSource1.Position = 0;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Data/Hora Entrada:";
+            // 
+            // cbMensalista
+            // 
+            this.cbMensalista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMensalista.Location = new System.Drawing.Point(220, 86);
+            this.cbMensalista.Name = "cbMensalista";
+            this.cbMensalista.Size = new System.Drawing.Size(242, 21);
+            this.cbMensalista.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(217, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Mensalista:";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(387, 138);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(306, 138);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 11;
+            this.btnOk.Text = "&OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // frmControleEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 394);
-            this.Controls.Add(this.tpPrincipal);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(474, 173);
+            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbMensalista);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtDataHoraEntrada);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbCor);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPlaca);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbModelo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmControleEntrada";
-            this.Text = "Controle Entrada";
-            this.Load += new System.EventHandler(this.frmControleEntrada_Load);
-            this.tpPrincipal.ResumeLayout(false);
-            this.tpPesquisa.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgVagasEntrada)).EndInit();
-            this.tpCadastro.ResumeLayout(false);
-            this.tpCadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mensalistaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.senacpos2015DataSetBindingSource1)).EndInit();
+            this.ShowIcon = false;
+            this.Text = "Controle de Entrada de Veículos";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tpPrincipal;
-        private System.Windows.Forms.TabPage tpPesquisa;
-        private System.Windows.Forms.TabPage tpCadastro;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCor;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtPlaca;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbModelo;
-        private System.Windows.Forms.MaskedTextBox txtDataEntrada;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox txtPlaca;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbCor;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox txtDataHoraEntrada;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.GroupBox gbChavePesquisa;
-        private System.Windows.Forms.DataGridView dgVagasEntrada;
         private System.Windows.Forms.ComboBox cbMensalista;
-        private senacpos2015DataSet senacpos2015DataSet;
-        private System.Windows.Forms.BindingSource mensalistaBindingSource;
-        private senacpos2015DataSetTableAdapters.MensalistaTableAdapter mensalistaTableAdapter;
-        private System.Windows.Forms.BindingSource senacpos2015DataSetBindingSource;
-        private System.Windows.Forms.BindingSource senacpos2015DataSetBindingSource1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnOk;
     }
 }

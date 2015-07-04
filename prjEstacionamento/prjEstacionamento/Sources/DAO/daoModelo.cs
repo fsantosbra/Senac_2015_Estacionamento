@@ -1,42 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using prjEstacionamento.Sources.Class;
 
 namespace prjEstacionamento.Sources.DAO
 {
-    class daoTipoVeiculo : daoBase
+    class daoModelo : daoBase
     {
-        private string Select = @"SELECT ID, TIPO FROM TIPOVEICULO";
+        private string Select = @"SELECT ID, MODELO, TIPOVEICULOID FROM MODELO";
 
-
-        public daoTipoVeiculo()
+        public daoModelo()
         {
             base.conexao = new SqlConnection(base.connString);
             base.comando = new SqlCommand();
             base.comando.Connection = base.conexao;
         }
 
-        public DataTable ListarTipoVeiculos()
+        public DataTable listarModelos()
         {
             try
             {
-                var tabelaTipoVeiculo = new DataTable();
-
+                var tabelaModelo = new DataTable();
                 base.comando.CommandText = Select;
                 base.conexao.Open();
                 var dataReader = base.comando.ExecuteReader();
 
-                tabelaTipoVeiculo.Load(dataReader);
+                tabelaModelo.Load(dataReader);
 
-                return tabelaTipoVeiculo;
+                return tabelaModelo;
             }
             finally
             {
-
+                base.conexao.Close();
+                base.comando.Parameters.Clear();
             }
         }
     }

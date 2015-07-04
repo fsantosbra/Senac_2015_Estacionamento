@@ -12,7 +12,8 @@ namespace prjEstacionamento.Sources.DAO
     class daoEndereco : daoBase
     {
         private string Insert = @"INSERT INTO ENDERECO VALUES (@LOGRADOURO, @NUMERO, @BAIRRO, @CIDADE, 
-                                                               @ESTADO, @CEP, @TELEFONE)";
+                                                               @ESTADO, @CEP, @TELEFONE);
+                                    SELECT SCOPE_IDENTITY();";
         private string Update = @"UPDATE MENSALISTA SET Logradouro = @LOGRADOURO, Numero = @NUMERO, 
                                     Bairro = @BAIRRO, Cidade = @CIDADE, Estado = @ESTADO, 
                                     CEP = @CEP, Telefone = @TELEFONE 
@@ -32,41 +33,53 @@ namespace prjEstacionamento.Sources.DAO
             base.comando.Connection = base.conexao;
         }
 
-        public void InserirMensalista(Mensalista mensalista)
+        public int InserirEndereco(Endereco endereco)
         {
+            var enderecoId = 0;
+
             try
             {
-                var paramNome = new SqlParameter("@NOME", mensalista.Nome);
-                var paramEnderecoId = new SqlParameter("@ENDERECOID", mensalista.EnderecoId);
-                var paramAtivo = new SqlParameter("@ATIVO", true);
+                var paramLogradouro = new SqlParameter("@LOGRADOURO", endereco.Logradouro);
+                var paramNumero = new SqlParameter("@NUMERO", endereco.Numero);
+                var paramBairro = new SqlParameter("@BAIRRO", endereco.Bairro);
+                var paramCidade = new SqlParameter("@CIDADE", endereco.Cidade);
+                var paramEstado = new SqlParameter("@ESTADO", endereco.Estado);
+                var paramCEP = new SqlParameter("@CEP", endereco.CEP);
+                var paramTelefone = new SqlParameter("@TELEFONE", endereco.Telefone);
 
                 base.comando.CommandText = Insert;
-                base.comando.Parameters.Add(paramNome);
-                base.comando.Parameters.Add(paramEnderecoId);
-                base.comando.Parameters.Add(paramAtivo);
+                base.comando.Parameters.Add(paramLogradouro);
+                base.comando.Parameters.Add(paramNumero);
+                base.comando.Parameters.Add(paramBairro);
+                base.comando.Parameters.Add(paramCidade);
+                base.comando.Parameters.Add(paramEstado);
+                base.comando.Parameters.Add(paramCEP);
+                base.comando.Parameters.Add(paramTelefone);
 
                 base.conexao.Open();
-                base.comando.ExecuteNonQuery();
+                enderecoId = Convert.ToInt32(base.comando.ExecuteScalar());
             }
             finally
             {
                 base.conexao.Close();
                 base.comando.Parameters.Clear();
             }
+
+            return enderecoId;
         }
 
-        public DataTable ListarMensalistas()
+        public DataTable ListarEnderecos()
         {
             try
             {
-                var tabelaMensalistas = new DataTable();
+                var tabelaEnderecos = new DataTable();
 
                 base.comando.CommandText = Select;
                 var dataReader = base.comando.ExecuteReader();
 
-                tabelaMensalistas.Load(dataReader);
+                tabelaEnderecos.Load(dataReader);
 
-                return tabelaMensalistas;
+                return tabelaEnderecos;
             }
             finally
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prjEstacionamento.Sources.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,15 @@ namespace prjEstacionamento.Sources.Class
         public decimal Valor { get; set; }
         public DateTime DataInicioVigencia { get; set; }
         public DateTime DataFimVigencia { get; set; }
-
+        public daoPrecoMensalista daoPrecoMensalista { get; set; }
         public PrecoMensalista()
         {
+            this.daoPrecoMensalista = new daoPrecoMensalista();
+        }
 
+        internal void InserirPrecoMensalista(PrecoMensalista precoMensalista)
+        {
+            this.daoPrecoMensalista.InserirPrecoMensalista(precoMensalista);
         }
     }
 }
