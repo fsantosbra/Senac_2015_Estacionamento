@@ -56,6 +56,7 @@
     <Compile Include="Sources\DAO\daoPrecoMensalista.cs" />
     <Compile Include="Sources\DAO\daoEndereco.cs" />
     <Compile Include="Sources\DAO\daoMensalista.cs" />
+    <Compile Include="Sources\DAO\daoSaidaVeiculo.cs" />
     <Compile Include="Sources\DAO\daoTipoVeiculo.cs" />
     <Compile Include="Sources\DAO\daoEntradaVeiculo.cs" />
     <Compile Include="Sources\DAO\daoVeiculos.cs" />
