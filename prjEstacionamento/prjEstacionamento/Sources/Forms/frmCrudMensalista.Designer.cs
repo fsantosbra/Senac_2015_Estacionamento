@@ -32,8 +32,8 @@
             this.tpPesquisa = new System.Windows.Forms.TabPage();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblPesquisaNome = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtPesquisaNome = new System.Windows.Forms.TextBox();
+            this.dgvMensalistas = new System.Windows.Forms.DataGridView();
             this.tpCadastro = new System.Windows.Forms.TabPage();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,9 +64,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMensalistas)).BeginInit();
             this.tpCadastro.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -76,34 +77,37 @@
             // 
             this.tabControl1.Controls.Add(this.tpPesquisa);
             this.tabControl1.Controls.Add(this.tpCadastro);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(585, 331);
+            this.tabControl1.Size = new System.Drawing.Size(607, 355);
             this.tabControl1.TabIndex = 0;
             // 
             // tpPesquisa
             // 
+            this.tpPesquisa.Controls.Add(this.btnLimpar);
             this.tpPesquisa.Controls.Add(this.btnPesquisar);
             this.tpPesquisa.Controls.Add(this.lblPesquisaNome);
-            this.tpPesquisa.Controls.Add(this.textBox1);
-            this.tpPesquisa.Controls.Add(this.dataGridView1);
+            this.tpPesquisa.Controls.Add(this.txtPesquisaNome);
+            this.tpPesquisa.Controls.Add(this.dgvMensalistas);
             this.tpPesquisa.Location = new System.Drawing.Point(4, 22);
             this.tpPesquisa.Name = "tpPesquisa";
             this.tpPesquisa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPesquisa.Size = new System.Drawing.Size(577, 305);
+            this.tpPesquisa.Size = new System.Drawing.Size(599, 329);
             this.tpPesquisa.TabIndex = 0;
             this.tpPesquisa.Text = "Pesquisa";
             this.tpPesquisa.UseVisualStyleBackColor = true;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(468, 35);
+            this.btnPesquisar.Location = new System.Drawing.Point(264, 36);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisar.TabIndex = 3;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // lblPesquisaNome
             // 
@@ -114,20 +118,30 @@
             this.lblPesquisaNome.TabIndex = 2;
             this.lblPesquisaNome.Text = "Nome";
             // 
-            // textBox1
+            // txtPesquisaNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtPesquisaNome.Location = new System.Drawing.Point(6, 38);
+            this.txtPesquisaNome.Name = "txtPesquisaNome";
+            this.txtPesquisaNome.Size = new System.Drawing.Size(252, 20);
+            this.txtPesquisaNome.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvMensalistas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 77);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(574, 280);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvMensalistas.AllowUserToAddRows = false;
+            this.dgvMensalistas.AllowUserToDeleteRows = false;
+            this.dgvMensalistas.AllowUserToResizeColumns = false;
+            this.dgvMensalistas.AllowUserToResizeRows = false;
+            this.dgvMensalistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMensalistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMensalistas.Location = new System.Drawing.Point(6, 77);
+            this.dgvMensalistas.MultiSelect = false;
+            this.dgvMensalistas.Name = "dgvMensalistas";
+            this.dgvMensalistas.ReadOnly = true;
+            this.dgvMensalistas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMensalistas.ShowEditingIcon = false;
+            this.dgvMensalistas.Size = new System.Drawing.Size(565, 222);
+            this.dgvMensalistas.TabIndex = 0;
+            this.dgvMensalistas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMensalistas_CellDoubleClick);
             // 
             // tpCadastro
             // 
@@ -137,7 +151,7 @@
             this.tpCadastro.Location = new System.Drawing.Point(4, 22);
             this.tpCadastro.Name = "tpCadastro";
             this.tpCadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCadastro.Size = new System.Drawing.Size(577, 305);
+            this.tpCadastro.Size = new System.Drawing.Size(599, 329);
             this.tpCadastro.TabIndex = 1;
             this.tpCadastro.Text = "Cadastro";
             this.tpCadastro.UseVisualStyleBackColor = true;
@@ -413,18 +427,30 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(345, 36);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.TabIndex = 4;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // frmCrudMensalista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 355);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "frmCrudMensalista";
+            this.ShowIcon = false;
             this.Text = "Mensalistas";
             this.tabControl1.ResumeLayout(false);
             this.tpPesquisa.ResumeLayout(false);
             this.tpPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMensalistas)).EndInit();
             this.tpCadastro.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -439,9 +465,9 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpPesquisa;
         private System.Windows.Forms.TabPage tpCadastro;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMensalistas;
         private System.Windows.Forms.Label lblPesquisaNome;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPesquisaNome;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
@@ -472,5 +498,6 @@
         private System.Windows.Forms.DateTimePicker dtpFinalVigencia;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }

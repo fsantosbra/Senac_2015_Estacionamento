@@ -21,6 +21,8 @@ namespace prjEstacionamento.Sources.Forms
             cmbTipoVeiculo.DataSource = tipoVeiculo.ListarTipoVeiculos();
             cmbTipoVeiculo.ValueMember = "Id";
             cmbTipoVeiculo.DisplayMember = "Tipo";
+
+            ListarMensalistas();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -68,6 +70,42 @@ namespace prjEstacionamento.Sources.Forms
             endereco.Telefone = txtTelefone.Text;
 
             return endereco.InserirEndereco(endereco);
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            var mensalista = new Mensalista();
+            dgvMensalistas.DataSource = mensalista.FiltrarPesquisa(txtPesquisaNome.Text);
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            ListarMensalistas();
+        }
+
+        private void ListarMensalistas()
+        {
+            var mensalista = new Mensalista();
+            dgvMensalistas.DataSource = mensalista.ListarMensalistas();
+        }
+
+        private void dgvMensalistas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var mensalistaId = dgvMensalistas.Rows[e.RowIndex].Cells[0].Value;
+
+            var mensalista = new Mensalista();
+            var dadosMensalista = mensalista.FiltrarMensalista(mensalistaId);
+
+            PreencheCamposMensalista(dadosMensalista);
+        }
+
+        private void PreencheCamposMensalista(DataTable dadosMensalista)
+        {
+            var mensalista = dadosMensalista.Rows[0];
+
+            txtNome.Text = mensalista.Field<string>(1);
+
+            tpCadastro.Show();
         }
     }
 }

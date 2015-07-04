@@ -20,7 +20,10 @@ namespace prjEstacionamento
 
         private void cadastroDeVagasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.IsMdiContainer = true;
+            frmCadastroVagas frmCadastroVagas = new frmCadastroVagas();
+            frmCadastroVagas.MdiParent = this;
+            frmCadastroVagas.Show();
         }
 
         private void cadastroDeDadosMestreToolStripMenuItem_Click(object sender, EventArgs e)

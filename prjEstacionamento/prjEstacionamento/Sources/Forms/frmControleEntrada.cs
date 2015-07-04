@@ -20,7 +20,7 @@ namespace prjEstacionamento.Sources.Forms
             txtDataHoraEntrada.Text = DateTime.Now.ToString();
 
             var listaMensalista = new Mensalista();
-            cbMensalista.DataSource = listaMensalista.ListarParametros();
+            cbMensalista.DataSource = listaMensalista.ListarMensalistas();
             cbMensalista.ValueMember = "ID";
             cbMensalista.DisplayMember = "NOME";
 
