@@ -16,20 +16,5 @@ namespace prjEstacionamento.Sources.Forms
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btOk_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmControleSaida_Load(object sender, EventArgs e)
-        {
-            String sql = "SELECT * FROM usovagas WHERE datasaida IS NULL"
-        }
     }
 }
