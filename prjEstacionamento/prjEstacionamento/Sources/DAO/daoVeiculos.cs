@@ -12,8 +12,10 @@ namespace prjEstacionamento.Sources.DAO
     class daoVeiculos : daoBase
     {
         private string Insert = @"INSERT INTO MODELO VALUES (@MODELO, @TIPO)";
+        private string Update = @"UPDATE M SET MODELO = @MODELO, TIPOVEICULOID = @TIPO FROM MODELO M WHERE ID = @ID";
+        private string Delete = @"DELETE FROM MODELO WHERE ID = @ID";
         private string SelectTipo = @"SELECT ID, TIPO FROM TIPOVEICULO";
-        private string Select = @"SELECT M.MODELO, TV.TIPO FROM MODELO M INNER JOIN TIPOVEICULO TV ON TV.ID = M.TIPOVEICULOID";
+        private string Select = @"SELECT M.ID, M.MODELO, TV.TIPO FROM MODELO M INNER JOIN TIPOVEICULO TV ON TV.ID = M.TIPOVEICULOID";
 
         public daoVeiculos()
         {
@@ -44,6 +46,54 @@ namespace prjEstacionamento.Sources.DAO
                 base.comando.Parameters.Clear();
             }
             
+        }
+
+        public string AlterarVeiculo(CadastroVeiculo Veiculo)
+        {
+            try
+            {
+                var paramModelo = new SqlParameter("@MODELO", Veiculo.Modelo);
+                var paramTipo   = new SqlParameter("@TIPO", Veiculo.Tipo);
+                var paramId     = new SqlParameter("@Id", Veiculo.Id);
+
+                base.comando.CommandText = Update;
+                base.comando.Parameters.Add(paramModelo);
+                base.comando.Parameters.Add(paramTipo);
+                base.comando.Parameters.Add(paramId);
+
+                base.conexao.Open();
+                base.comando.ExecuteNonQuery();
+
+                return base.conexao.State.ToString();
+            }
+            finally
+            {
+                base.conexao.Close();
+                base.comando.Parameters.Clear();
+            }
+
+        }
+
+        public string ExcluirVeiculo(CadastroVeiculo Veiculo)
+        {
+            try
+            {
+                var paramId     = new SqlParameter("@Id", Veiculo.Id);
+
+                base.comando.CommandText = Delete;
+                base.comando.Parameters.Add(paramId);
+
+                base.conexao.Open();
+                base.comando.ExecuteNonQuery();
+
+                return base.conexao.State.ToString();
+            }
+            finally
+            {
+                base.conexao.Close();
+                base.comando.Parameters.Clear();
+            }
+
         }
 
         public DataTable ExibirVeiculos()

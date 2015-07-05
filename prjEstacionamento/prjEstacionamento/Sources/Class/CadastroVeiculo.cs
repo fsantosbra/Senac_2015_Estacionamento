@@ -12,6 +12,7 @@ namespace prjEstacionamento.Sources.Class
     {
         public string Modelo { get; set; }
         public int    Tipo   { get; set; }
+        public int Id        { get; set; }
         public daoVeiculos daoVeiculos { get; set; }
 
         public CadastroVeiculo()
@@ -22,6 +23,16 @@ namespace prjEstacionamento.Sources.Class
         public void InserirVeiculo(CadastroVeiculo Veiculo)
         {
             this.daoVeiculos.InserirVeiculo(Veiculo);
+        }
+
+        public void AlterarVeiculo(CadastroVeiculo Veiculo)
+        {
+            this.daoVeiculos.AlterarVeiculo(Veiculo);
+        }
+
+        public void ExcluirVeiculo(CadastroVeiculo Veiculo)
+        {
+            this.daoVeiculos.ExcluirVeiculo(Veiculo);
         }
 
         public DataTable ExibirVeiculos()
