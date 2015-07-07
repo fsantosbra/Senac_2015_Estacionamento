@@ -31,6 +31,7 @@ namespace prjEstacionamento
             var Vaga = new Vagas();
             Vaga.QtdeVagasTotal = int.Parse(txt_QntdeTotal.Text);
             Vaga.TipoVeiculoId = int.Parse(cbx_Tipo.SelectedValue.ToString());
+            Vaga.QtdeMensalista = int.Parse(txtQntdeMensal.Text);
 
             if (txt_QntdeTotal.Text.Trim() == "")
             {

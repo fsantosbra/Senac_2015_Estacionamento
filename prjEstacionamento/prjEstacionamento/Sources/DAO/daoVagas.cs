@@ -22,21 +22,40 @@ namespace prjEstacionamento.Sources.DAO
                                   WHERE Id = @Id";
         
         private string Delete = @"DELETE FROM VAGAS WHERE Id = @Id";
-        
-        private string Select = @"SELECT ID
-                                        ,TIPOVEICULOID
-                                        ,QTDEVAGASTOTAL
-                                        ,QTDEMENSALISTA
-                                        ,QTDEVAGASTOTALCORRENTE
-                                        ,QTDEMENSALISTACORRENTE 
-                                  FROM VAGAS";
+
+        private string Select = @"SELECT VG.ID
+                                        ,VG.TIPOVEICULOID
+                                        ,VG.QTDEVAGASTOTAL
+                                        ,VG.QTDEMENSALISTA
+                                        ,(SELECT COUNT(ID) FROM USOVAGA 
+                                          WHERE DATAENTRADA = GETDATE()
+                                          AND DATASAIDA IS NOT NULL
+                                          AND EHMENSALISTA IS NULL) AS QTDEVAGASTOTALCORRENTE
+                                        ,(SELECT COUNT(MNS.ID) 
+                                          FROM MENSALISTA MNS
+                                          LEFT JOIN USOVAGA UV ON (UV.MENSALISTAID = MNS.ID)
+                                          LEFT JOIN MODELO MOD ON (MOD.ID = UV.MODELOID)
+                                          WHERE ATIVO IS NOT NULL) AS QTDEMENSALISTACORRENTE 
+                                  FROM VAGAS VG";
+
         private string SelectSpecific = @"SELECT ID
                                                 ,TIPOVEICULOID
                                                 ,QTDEVAGASTOTAL
                                                 ,QTDEMENSALISTA
-                                                ,QTDEVAGASTOTALCORRENTE
-                                                ,QTDEMENSALISTACORRENTE  
-                                         FROM VAGAS WHERE TIPOVEICULOID =  like %'@TIPOVEICULOID'";
+                                                ,(SELECT COUNT(ID) FROM USOVAGA 
+                                                  WHERE DATAENTRADA = GETDATE()
+                                                  AND DATASAIDA IS NOT NULL
+                                                  AND EHMENSALISTA IS NULL) AS QTDEVAGASTOTALCORRENTE
+                                                ,(SELECT COUNT(ID) FROM MENSALISTA 
+                                                  WHERE ATIVO IS NOT NULL) AS QTDEMENSALISTACORRENTE
+                                         FROM VAGAS 
+                                         WHERE @ID = @ID OR ID = @ID
+                                         AND @QTDEVAGASTOTAL = @QTDEVAGASTOTAL OR QTDEVAGASTOTAL = @QTDEVAGASTOTAL
+                                         AND @TIPOVEICULOID = @TIPOVEICULOID OR TIPOVEICULOID like %@TIPOVEICULOID
+                                         AND @QTDEMENSALISTA = @QTDEMENSALISTA OR QTDEMENSALISTA = @QTDEMENSALISTA
+                                         AND @QTDEVAGASTOTALCORRENTE = @QTDEVAGASTOTALCORRENTE OR QTDEVAGASTOTALCORRENTE = @QTDEVAGASTOTALCORRENTE
+                                         AND @QTDEMENSALISTACORRENTE = @QTDEMENSALISTACORRENTE OR QTDEMENSALISTACORRENTE = @QTDEMENSALISTACORRENTE
+                                         ";
 
         public daoVagas()
         {
@@ -85,21 +104,7 @@ namespace prjEstacionamento.Sources.DAO
                 DataTable tabelaVagas = new DataTable();
                 Vagas.CommandString = this.SelectSpecific;
                 tabelaVagas = GetDados(Vagas);
-
-                //var paramId = new SqlParameter("@ID", Vagas.Id);
-                //var paramTipoVeiculoId = new SqlParameter("@TIPOVEICULOID", Vagas.TipoVeiculoId);
-                //var paramQtdeVagasTotal = new SqlParameter("@QTDEVAGASTOTAL", Vagas.QtdeVagasTotal);
-                //var paramQtdeMensalista = new SqlParameter("@QTDEMENSALISTA", Vagas.QtdeMensalista);
-                //var paramQtdeVagasTotalCorrente = new SqlParameter("@QTDEVAGASTOTALCORRENTE", Vagas.QtdeVagasTotalCorrente);
-                //var paramQtdeMensalistaCorrente = new SqlParameter("@QTDEMENSALISTACORRENTE", Vagas.QtdeMensalistaCorrente);
-
-                //base.comando.Parameters.Add(paramTipoVeiculoId);
-                //base.comando.CommandText = SelectSpecific;
-
-                //var dataReader = base.comando.ExecuteReader();
-
-                //tabelaVagas.Load(dataReader);
-
+                
                 return tabelaVagas;
             }
             finally
@@ -116,10 +121,9 @@ namespace prjEstacionamento.Sources.DAO
                 DataTable tabelaVagas = new DataTable();
                 base.conexao.Open();
                 base.comando.CommandText = Select;
-                var dataReader = base.comando.ExecuteReader();
-                dataReader.Read();
-
-                tabelaVagas.Load(dataReader.Read());
+                
+                SqlDataAdapter ObjDataAdapter = new SqlDataAdapter(comando);
+                ObjDataAdapter.Fill(tabelaVagas);
 
                 return tabelaVagas;
             }
@@ -133,53 +137,36 @@ namespace prjEstacionamento.Sources.DAO
         //public List<Vagas> GetDados(Vagas Vagas)
         public DataTable GetDados(Vagas Vagas)
         {
-            var paramId = new SqlParameter("@ID", Vagas.Id);
-            var paramTipoVeiculoId = new SqlParameter("@TIPOVEICULOID", Vagas.TipoVeiculoId);
-            var paramQtdeVagasTotal = new SqlParameter("@QTDEVAGASTOTAL", Vagas.QtdeVagasTotal);
-            var paramQtdeMensalista = new SqlParameter("@QTDEMENSALISTA", Vagas.QtdeMensalista);
-            var paramQtdeVagasTotalCorrente = new SqlParameter("@QTDEVAGASTOTALCORRENTE", Vagas.QtdeVagasTotalCorrente);
-            var paramQtdeMensalistaCorrente = new SqlParameter("@QTDEMENSALISTACORRENTE", Vagas.QtdeMensalistaCorrente);
-
-            base.comando.CommandText = Vagas.CommandString ;
-            base.comando.Parameters.Add(paramId);
-            base.comando.Parameters.Add(paramTipoVeiculoId);
-            base.comando.Parameters.Add(paramQtdeVagasTotal);
-            base.comando.Parameters.Add(paramQtdeMensalista);
-            base.comando.Parameters.Add(paramQtdeVagasTotalCorrente);
-            base.comando.Parameters.Add(paramQtdeMensalistaCorrente);
-            
-            base.conexao.Open();
-            var readerVagas = base.comando.ExecuteReader();
-            DataTable tbRetorno = new DataTable();
-            tbRetorno.Load(readerVagas);
-            /*
-            DataTable newDataTable = readerVagas.GetSchemaTable();
-            
-            
-            foreach (DataRow r in newDataTable.Rows)
+            try
             {
-                if (!newDataTable.Columns.Contains(r["ID"].ToString())) 
-                { 
-                    DataColumn col = new DataColumn(){
-                        ColumnName = r["ID"].ToString(), 
-                        Unique = Convert.ToBoolean(r["IsUnique"]), 
-                        AllowDBNull = Convert.ToBoolean(r["AllowDBNull"]), 
-                        ReadOnly = Convert.ToBoolean(r["IsReadOnly"]) 
-                    };
-                    tbRetorno.Columns.Add(col); 
-                } 
-            }
+                var paramId = new SqlParameter("@ID", Vagas.Id);
+                var paramTipoVeiculoId = new SqlParameter("@TIPOVEICULOID", Vagas.TipoVeiculoId);
+                var paramQtdeVagasTotal = new SqlParameter("@QTDEVAGASTOTAL", Vagas.QtdeVagasTotal);
+                var paramQtdeMensalista = new SqlParameter("@QTDEMENSALISTA", Vagas.QtdeMensalista);
+                var paramQtdeVagasTotalCorrente = new SqlParameter("@QTDEVAGASTOTALCORRENTE", Vagas.QtdeVagasTotalCorrente);
+                var paramQtdeMensalistaCorrente = new SqlParameter("@QTDEMENSALISTACORRENTE", Vagas.QtdeMensalistaCorrente);
 
-            while (readerVagas.Read())
-            { 
-                DataRow novaLinha = tbRetorno.NewRow(); 
-                for(int i = 0; i<tbRetorno.Columns.Count;i++) {
-                    novaLinha[i] = readerVagas.GetValue(i); 
-                } tbRetorno.Rows.Add(novaLinha); 
-            } 
-            */
-            //return tbRetorno;
-            return tbRetorno;
+                base.comando.Parameters.Add(paramId);
+                base.comando.Parameters.Add(paramTipoVeiculoId);
+                base.comando.Parameters.Add(paramQtdeVagasTotal);
+                base.comando.Parameters.Add(paramQtdeMensalista);
+                base.comando.Parameters.Add(paramQtdeVagasTotalCorrente);
+                base.comando.Parameters.Add(paramQtdeMensalistaCorrente);
+
+                DataTable tabelaVagas = new DataTable();
+                base.conexao.Open();
+                base.comando.CommandText = Vagas.CommandString;
+
+                SqlDataAdapter ObjDataAdapter = new SqlDataAdapter(comando);
+                ObjDataAdapter.Fill(tabelaVagas);
+
+                return tabelaVagas;
+            }
+            finally 
+            {
+                base.conexao.Open();
+                base.comando.Parameters.Clear();
+            }
         }
     }
 }
