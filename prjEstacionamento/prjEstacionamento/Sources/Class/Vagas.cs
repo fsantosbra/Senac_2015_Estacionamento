@@ -11,13 +11,15 @@ namespace prjEstacionamento.Sources.Class
     class Vagas
     {
         public int Id { get; set; }
-        public string TipoVeiculoId { get; set; }
+        public int TipoVeiculoId { get; set; }
         public int QtdeVagasTotal { get; set; }
         public int QtdeMensalista { get; set; }
         public int QtdeVagasTotalCorrente { get; set; }
         public int QtdeMensalistaCorrente { get; set; }
-        
+        public string CommandString { get; set; }
+
         public daoVagas daoVagas { get; set; }
+        
         public Vagas()
         {
             daoVagas = new daoVagas();
@@ -31,6 +33,13 @@ namespace prjEstacionamento.Sources.Class
         public DataTable ListarVagas()
         {
             return daoVagas.ListarVagas();
+        }
+
+        public DataTable ListarVagasTipo(Vagas Vagas)
+        {
+
+            return daoVagas.ListarVagasTipo(Vagas);
+            
         }
     }
 }

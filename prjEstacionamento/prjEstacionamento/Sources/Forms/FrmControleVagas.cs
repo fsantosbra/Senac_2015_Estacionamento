@@ -21,12 +21,20 @@ namespace prjEstacionamento.Sources.Forms
 
         private void ControleVagas_Load(object sender, EventArgs e)
         {
-            Vagas Vagas = new Vagas();
-            var tabelaVagas = Vagas.ListarVagas();
-            lblQtdAvulso.Text = (tabelaVagas.QtdeVagasTotal - tabelaVagas.QtdeMensalista).toString();
-            lblQtdMensal.Text = tabelaVagas.QtdeMensal.toString();
-            lblQtdMensalDisp.Text = (tabelaVagas.QtdeMensalista - tabelaVagas.QtdeMensalistaCorrente);
-            lblQtdAvulsoDisp.Text = (tabelaVagas.QtdeVagasTotal - tabelaVagas.QtdeMensalistaCorrente);
+            Vagas vagas = new Vagas();
+            
+            var dados = vagas.ListarVagas();
+            if (dados != null)
+            {
+                //for(var r=0; r< dados.cou){
+                //    lblQtdAvMt.Text = (dados[0]. - dados.QtdeMensalista).toString();
+                //    lblQtdMensal.Text = r.QtdeMensal.toString();
+                //    lblQtdMensalDisp.Text = (r.QtdeMensalista - dados.QtdeMensalistaCorrente).toString();
+                //    lblQtdAvulsoDisp.Text = (r.QtdeVagasTotal - dados.QtdeMensalistaCorrente).toString();
+                //}
+            }
         }
+
+        
     }
 }
