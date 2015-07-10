@@ -155,5 +155,13 @@ namespace prjEstacionamento
         {
 
         }
+
+        private void cadastroDeParceiroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            Frm_CadastroParceiro frmCadastroParceiro = new Frm_CadastroParceiro();
+            frmCadastroParceiro.MdiParent = this;
+            frmCadastroParceiro.Show();
+        }
     }
 }

@@ -40,7 +40,7 @@
             this.avulsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensalistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeVeículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDeSaídaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeParceiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeMensalistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,14 +91,14 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(112, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.toolStripMenuItem1.Text = "Login";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -109,7 +109,7 @@
             this.cadastroDeDadosMestreToolStripMenuItem,
             this.tabelaDePreçosToolStripMenuItem,
             this.cadastroDeVeículosToolStripMenuItem,
-            this.cadastroDeSaídaToolStripMenuItem,
+            this.cadastroDeParceiroToolStripMenuItem,
             this.cadastroDeMensalistasToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
@@ -161,12 +161,12 @@
             this.cadastroDeVeículosToolStripMenuItem.Text = "Cadastro de Veículos";
             this.cadastroDeVeículosToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeVeículosToolStripMenuItem_Click);
             // 
-            // cadastroDeSaídaToolStripMenuItem
+            // cadastroDeParceiroToolStripMenuItem
             // 
-            this.cadastroDeSaídaToolStripMenuItem.Name = "cadastroDeSaídaToolStripMenuItem";
-            this.cadastroDeSaídaToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
-            this.cadastroDeSaídaToolStripMenuItem.Text = "Cadastro de Parceiros";
-            this.cadastroDeSaídaToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeSaídaToolStripMenuItem_Click);
+            this.cadastroDeParceiroToolStripMenuItem.Name = "cadastroDeParceiroToolStripMenuItem";
+            this.cadastroDeParceiroToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.cadastroDeParceiroToolStripMenuItem.Text = "Cadastro de Parceiros";
+            this.cadastroDeParceiroToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeParceiroToolStripMenuItem_Click);
             // 
             // cadastroDeMensalistasToolStripMenuItem
             // 
@@ -350,7 +350,7 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroDeDadosMestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabelaDePreçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeVeículosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroDeSaídaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroDeParceiroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;

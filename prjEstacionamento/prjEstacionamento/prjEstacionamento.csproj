@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sources\Class\CadastroEntradaVeiculo.cs" />
+    <Compile Include="Sources\Class\CadastroParceiro.cs" />
     <Compile Include="Sources\Class\CadastroVeiculo.cs" />
     <Compile Include="Sources\Class\Endereco.cs" />
     <Compile Include="Sources\Class\Mensalista.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Sources\Class\Vagas.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
     <Compile Include="Sources\DAO\daoModelo.cs" />
+    <Compile Include="Sources\DAO\daoParceiros.cs" />
     <Compile Include="Sources\DAO\daoPrecoMensalista.cs" />
     <Compile Include="Sources\DAO\daoEndereco.cs" />
     <Compile Include="Sources\DAO\daoMensalista.cs" />
@@ -112,6 +114,12 @@
     <Compile Include="Sources\Forms\frmTipoVeiculo.designer.cs">
       <DependentUpon>frmTipoVeiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sources\Forms\Frm_CadastroParceiros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\Frm_CadastroParceiros.designer.cs">
+      <DependentUpon>Frm_CadastroParceiros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Forms\Frm_CadastroVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmTipoVeiculo.resx">
       <DependentUpon>frmTipoVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\Frm_CadastroParceiros.resx">
+      <DependentUpon>Frm_CadastroParceiros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\Frm_CadastroVeiculo.resx">
       <DependentUpon>Frm_CadastroVeiculo.cs</DependentUpon>
