@@ -60,7 +60,7 @@
             this.tbsAcoes.Multiline = true;
             this.tbsAcoes.Name = "tbsAcoes";
             this.tbsAcoes.SelectedIndex = 0;
-            this.tbsAcoes.Size = new System.Drawing.Size(410, 139);
+            this.tbsAcoes.Size = new System.Drawing.Size(678, 268);
             this.tbsAcoes.TabIndex = 0;
             // 
             // tbsLancarPgto
@@ -75,22 +75,24 @@
             this.tbsLancarPgto.Location = new System.Drawing.Point(4, 22);
             this.tbsLancarPgto.Name = "tbsLancarPgto";
             this.tbsLancarPgto.Padding = new System.Windows.Forms.Padding(3);
-            this.tbsLancarPgto.Size = new System.Drawing.Size(402, 113);
+            this.tbsLancarPgto.Size = new System.Drawing.Size(670, 242);
             this.tbsLancarPgto.TabIndex = 0;
             this.tbsLancarPgto.Text = "Lançar Pagamento";
             this.tbsLancarPgto.UseVisualStyleBackColor = true;
             // 
             // txtValor
             // 
+            this.txtValor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtValor.Location = new System.Drawing.Point(71, 43);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(200, 20);
+            this.txtValor.Size = new System.Drawing.Size(464, 20);
             this.txtValor.TabIndex = 15;
             // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(240, 87);
+            this.btnOk.Location = new System.Drawing.Point(508, 216);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 14;
@@ -100,7 +102,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(321, 87);
+            this.btnCancelar.Location = new System.Drawing.Point(589, 216);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 13;
@@ -127,8 +129,9 @@
             // 
             // chkValorPersonalizado
             // 
+            this.chkValorPersonalizado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkValorPersonalizado.AutoSize = true;
-            this.chkValorPersonalizado.Location = new System.Drawing.Point(277, 42);
+            this.chkValorPersonalizado.Location = new System.Drawing.Point(541, 42);
             this.chkValorPersonalizado.Name = "chkValorPersonalizado";
             this.chkValorPersonalizado.Size = new System.Drawing.Size(119, 17);
             this.chkValorPersonalizado.TabIndex = 10;
@@ -137,9 +140,11 @@
             // 
             // dtpDataPgto
             // 
+            this.dtpDataPgto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDataPgto.Location = new System.Drawing.Point(72, 17);
             this.dtpDataPgto.Name = "dtpDataPgto";
-            this.dtpDataPgto.Size = new System.Drawing.Size(322, 20);
+            this.dtpDataPgto.Size = new System.Drawing.Size(586, 20);
             this.dtpDataPgto.TabIndex = 8;
             // 
             // tabConsultarPgtos
@@ -148,20 +153,20 @@
             this.tabConsultarPgtos.Location = new System.Drawing.Point(4, 22);
             this.tabConsultarPgtos.Name = "tabConsultarPgtos";
             this.tabConsultarPgtos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConsultarPgtos.Size = new System.Drawing.Size(402, 113);
+            this.tabConsultarPgtos.Size = new System.Drawing.Size(670, 242);
             this.tabConsultarPgtos.TabIndex = 1;
             this.tabConsultarPgtos.Text = "Consultar Pagamentos";
             this.tabConsultarPgtos.UseVisualStyleBackColor = true;
             // 
             // grdLancamentos
             // 
-            this.grdLancamentos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grdLancamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdLancamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdLancamentos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdLancamentos.Location = new System.Drawing.Point(3, 3);
             this.grdLancamentos.Name = "grdLancamentos";
-            this.grdLancamentos.Size = new System.Drawing.Size(396, 107);
+            this.grdLancamentos.ReadOnly = true;
+            this.grdLancamentos.Size = new System.Drawing.Size(664, 236);
             this.grdLancamentos.TabIndex = 0;
             // 
             // cbxMensalista
@@ -171,7 +176,7 @@
             this.cbxMensalista.FormattingEnabled = true;
             this.cbxMensalista.Location = new System.Drawing.Point(76, 6);
             this.cbxMensalista.Name = "cbxMensalista";
-            this.cbxMensalista.Size = new System.Drawing.Size(327, 21);
+            this.cbxMensalista.Size = new System.Drawing.Size(595, 21);
             this.cbxMensalista.TabIndex = 1;
             this.cbxMensalista.SelectedValueChanged += new System.EventHandler(this.cbxMensalista_SelectedValueChanged);
             // 
@@ -182,7 +187,7 @@
             this.cbxPlaca.FormattingEnabled = true;
             this.cbxPlaca.Location = new System.Drawing.Point(76, 33);
             this.cbxPlaca.Name = "cbxPlaca";
-            this.cbxPlaca.Size = new System.Drawing.Size(327, 21);
+            this.cbxPlaca.Size = new System.Drawing.Size(595, 21);
             this.cbxPlaca.TabIndex = 2;
             // 
             // lblMensalista
@@ -207,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 203);
+            this.ClientSize = new System.Drawing.Size(678, 332);
             this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.lblMensalista);
             this.Controls.Add(this.cbxPlaca);
