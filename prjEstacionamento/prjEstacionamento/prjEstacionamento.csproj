@@ -240,7 +240,10 @@
     <EmbeddedResource Include="Sources\Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Documentacao\Cadastro de Mensalistas.docx" />
     <None Include="Documentacao\Documentação - Design Técnico de Telas.docx" />
+    <None Include="Documentacao\GerenciamentoMensalistas.bmpr" />
+    <None Include="Documentacao\Sistema de Estacionamento - Pós Senac - 2015.docx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -255,6 +258,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Documentacao\GerenciamentoMensalistas.png" />
     <Content Include="FontesSQL\modificacoesBaseDeDados.sql" />
     <Content Include="FontesSQL\prjEstacionamento.sql" />
     <Content Include="FontesSQL\STP_GravarLogEstacionamento.sql" />
