@@ -51,17 +51,23 @@ namespace prjEstacionamento.Sources.Forms
         {
             grdLancamentos.DataSource = listaPagamentos.ListarPagamentosMensalista(idMensalista, pPlaca);
 
-            DataColumnCollection columns = table.Columns;
+            if (grdLancamentos.Columns.Contains("MensalistaId"))
+            {
+                grdLancamentos.Columns["MensalistaId"].Visible = false; 
+            }
+            if (grdLancamentos.Columns.Contains("TipoVeiculoId"))
+            { 
+                grdLancamentos.Columns["TipoVeiculoId"].Visible = false; 
+            }
+            if (grdLancamentos.Columns.Contains("Placa"))
+            { 
+                grdLancamentos.Columns["Placa"].Visible = false; 
+            }
+            if (grdLancamentos.Columns.Contains("Valor"))
+            {
+                grdLancamentos.Columns["Valor"].DefaultCellStyle.Format = "R$ ########,##";
+            }
 
-    if (columns.Contains(columnName))
-    {
-       ....
-    }}
-
-            grdLancamentos.Columns["MensalistaId"].Visible = false;
-            grdLancamentos.Columns["TipoVeiculoId"].Visible = false;
-            grdLancamentos.Columns["Placa"].Visible = false;
-            grdLancamentos.Columns["Valor"].DefaultCellStyle.Format = "R$ ########,##";
             grdLancamentos.ReadOnly = true;
         }
 
