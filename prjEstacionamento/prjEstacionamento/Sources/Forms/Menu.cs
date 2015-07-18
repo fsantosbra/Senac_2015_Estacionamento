@@ -13,6 +13,12 @@ namespace prjEstacionamento
 {
     public partial class Menu : Form
     {
+        public frmLogin login;
+
+        public int idUsuario;
+
+        public DataTable permissoes;
+
         public Menu()
         {
             InitializeComponent();
@@ -20,6 +26,8 @@ namespace prjEstacionamento
 
         private void cadastroDeVagasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!temPermissao("Cadastro de Vagas"))
+                return;
             this.IsMdiContainer = true;
             frmCadastroVagas frmCadastroVagas = new frmCadastroVagas();
             frmCadastroVagas.MdiParent = this;
@@ -28,7 +36,8 @@ namespace prjEstacionamento
 
         private void cadastroDeDadosMestreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!temPermissao("Cadastro de Dados Mestre"))
+                return;
         }
 
         private void tabelaDePreçosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,6 +47,8 @@ namespace prjEstacionamento
 
         private void cadastroDeVeículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!temPermissao("Cadastro de Veículos"))
+                return;
             this.IsMdiContainer = true;
             Frm_CadastroVeiculo frmCadastroVeiculo = new Frm_CadastroVeiculo();
             frmCadastroVeiculo.MdiParent = this;
@@ -51,7 +62,8 @@ namespace prjEstacionamento
 
         private void logsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!temPermissao("Consulta de Logs"))
+                return;
         }
 
         private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,11 +73,14 @@ namespace prjEstacionamento
 
         private void controleDeVagasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!temPermissao("Controle de Vagas"))
+                return;
         }
 
         private void controleDeEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!temPermissao("Controle de Entrada"))
+                return;
             this.IsMdiContainer = true;
             frmControleEntrada frmControleEntrada = new frmControleEntrada();
             frmControleEntrada.MdiParent = this;
@@ -74,11 +89,14 @@ namespace prjEstacionamento
 
         private void controleDeSaídaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!temPermissao("Controle de Saída"))
+                return;
         }
 
         private void gerenciamentoDeMensalistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!temPermissao("Gerenciamento de Mensalistas"))
+                return;
             this.IsMdiContainer = true;
             frmGerenciarMensalista frmGerenciarMensalista = new frmGerenciarMensalista();
             frmGerenciarMensalista.MdiParent = this;
@@ -87,48 +105,55 @@ namespace prjEstacionamento
 
         private void vagasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!temPermissao("Consulta de Vagas"))
+                return;
         }
 
         private void tabelaDePreçosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            if (!temPermissao("Consulta de Tabela de Preços"))
+                return;
         }
 
         private void veículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!temPermissao("Consulta de Veículos"))
+                return;
         }
 
         private void parceirosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!temPermissao("Consulta de Parceiros"))
+                return;
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja encerrar a aplicação ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            this.Close();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.IsMdiContainer = true;
+            /*this.IsMdiContainer = true;
             frmSeuForm frmSeuForm = new frmSeuForm();
             frmSeuForm.MdiParent = this;
-            frmSeuForm.Show();
+            frmSeuForm.Show();*/
+
+            login.limpaCampos();
+            login.Visible = true;            
+            this.Close();
           
             /*Para que o seu Form seja aberto no clique do item do menu, 
               adicione o código acima no evento Click do MenuItem.
              * É necessário alterar todas instâncias da classe frmSeuForm para o nome da classe do seu
              * form. Para acessar o código do evento Click para o seu Form, 
-             * dê um duplo clique no item desejado. */
+             * dê um duplo clique no item desejado. */            
         }
 
         private void cadastroDeMensalistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!temPermissao("Cadastro de Mensalistas"))
+                return;
             this.IsMdiContainer = true;
             frmCrudMensalista frmMensalista= new frmCrudMensalista();
             frmMensalista.MdiParent = this;
@@ -137,6 +162,8 @@ namespace prjEstacionamento
 
         private void avulsoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!temPermissao("Cadastro da Tabela de Preços - Avulso"))
+                return;
             this.IsMdiContainer = true;
             frmPrecoAvulso frmPrecoAvulso = new frmPrecoAvulso();
             frmPrecoAvulso.MdiParent = this;
@@ -145,6 +172,8 @@ namespace prjEstacionamento
 
         private void mensalistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!temPermissao("Cadastro da Tabela de Preços - Mensalista"))
+                return;
             this.IsMdiContainer = true;
             frmPrecoMensalista frmPrecoMensalista = new frmPrecoMensalista();
             frmPrecoMensalista.MdiParent = this;
@@ -158,10 +187,108 @@ namespace prjEstacionamento
 
         private void cadastroDeParceiroToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!temPermissao("Cadastro de Parceiros"))
+                return;
             this.IsMdiContainer = true;
             Frm_CadastroParceiro frmCadastroParceiro = new Frm_CadastroParceiro();
             frmCadastroParceiro.MdiParent = this;
             frmCadastroParceiro.Show();
+        }
+
+        private void cadastroDeGrupoDeAcessoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!temPermissao("Cadastro de Grupo de Acesso"))
+                return;
+            this.IsMdiContainer = true;
+            frmGrupoAcesso frmGrupoAcesso = new frmGrupoAcesso();
+            frmGrupoAcesso.MdiParent = this;
+            frmGrupoAcesso.formmenu = this;
+            frmGrupoAcesso.podeAcessarTelaPermissoes = temPermissao("Cadastro de Permissões");
+            frmGrupoAcesso.Show();
+        }
+
+        private void cadastroDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!temPermissao("Cadastro de Usuários"))
+                return;
+            this.IsMdiContainer = true;
+            frmUsuario frmUsuario = new frmUsuario();
+            frmUsuario.MdiParent = this;
+            frmUsuario.Show();
+        }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            if (login.Visible)
+            {
+                e.Cancel = false;
+                return;
+            }
+               
+            if (MessageBox.Show("Deseja encerrar a aplicação?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                e.Cancel = false;               
+                login.Close();
+                Application.Exit();
+            }
+        }
+
+        private bool temPermissao(string nometela)
+        {
+            bool resposta = true;
+
+            if (idUsuario == -1)
+                return true;
+
+            if (permissoes == null)
+                resposta = false;
+
+            DataRow[] row = permissoes.Select(String.Format("NOMETELA = '{0}'", nometela));
+            if (row.Length == 0)
+                resposta = false;
+
+            if ((!resposta) && (!nometela.Equals("Cadastro de Permissões")))
+            {
+                MessageBox.Show("Usuário não tem permissão para acessar essa tela.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return resposta;
+        }
+
+        private void sintéticoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!temPermissao("Relatório de Entrada e Saída - Sintético"))
+                return;
+        }
+
+        private void analíticoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!temPermissao("Relatório de Entrada e Saída - Analítico"))
+                return;
+        }
+
+        private void mensalistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!temPermissao("Relatório de Mensalistas"))
+                return;
+        }
+
+        private void fluxoDeVeículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!temPermissao("Relatório de Fluxo de Veículos"))
+                return;
+        }
+
+        private void logDeOperaçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!temPermissao("Relatórios de Log de Operações"))
+                return;
         }
     }
 }
