@@ -21,16 +21,13 @@ namespace prjEstacionamento.Sources.Forms
             var listaMensalistas = new Mensalista();
             listaPagamentos = new GerenciamentoMensalista();
 
-            cbxMensalista.DataSource = listaMensalistas.ListarParametros();
+            cbxMensalista.DataSource = listaMensalistas.ListarMensalistas();
             cbxMensalista.ValueMember = "Id";
             cbxMensalista.DisplayMember = "Nome";
-
-            carregaDadosMensalista();
         }
 
         private void cbxMensalista_SelectedValueChanged(object sender, EventArgs e)
         {
-            cbxPlaca.Text = "";
             carregaDadosMensalista();
         }
 
@@ -44,16 +41,43 @@ namespace prjEstacionamento.Sources.Forms
         private void carregaDadosMensalista()
         {
             int idMensalista = validaSelecaoMensalista();
+
             cbxPlaca.DataSource = listaPagamentos.ListarPagamentosMensalista(idMensalista, "");
             cbxPlaca.ValueMember = "Placa";
-            cbxMensalista.DisplayMember = "Placa";
+            cbxPlaca.DisplayMember = "Placa";
+        }
 
-            grdLancamentos.AutoGenerateColumns = true;
-            grdLancamentos.DataSource = listaPagamentos.ListarPagamentosMensalista(idMensalista, cbxMensalista.SelectedValue.ToString());
-            grdLancamentos.Columns.Remove("MensalistaId");
-            grdLancamentos.Columns.Remove("TipoVeiculoId");
-            grdLancamentos.Columns.Remove("Placa");
+        private void carregaDadosPlaca(int idMensalista, string pPlaca)
+        {
+            grdLancamentos.DataSource = listaPagamentos.ListarPagamentosMensalista(idMensalista, pPlaca);
+
+            DataColumnCollection columns = table.Columns;
+
+    if (columns.Contains(columnName))
+    {
+       ....
+    }}
+
+            grdLancamentos.Columns["MensalistaId"].Visible = false;
+            grdLancamentos.Columns["TipoVeiculoId"].Visible = false;
+            grdLancamentos.Columns["Placa"].Visible = false;
+            grdLancamentos.Columns["Valor"].DefaultCellStyle.Format = "R$ ########,##";
             grdLancamentos.ReadOnly = true;
+        }
+
+        private void cbxPlaca_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int idMensalista = validaSelecaoMensalista();
+            string pPlaca = "";
+            if (cbxPlaca.Items.Count > 0)
+            {
+                pPlaca = cbxPlaca.SelectedValue.ToString();
+            }
+            else
+            {
+                cbxPlaca.Text = "";
+            }
+            carregaDadosPlaca(idMensalista, pPlaca);
         }
     }
 }

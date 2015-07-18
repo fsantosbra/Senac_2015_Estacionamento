@@ -14,9 +14,9 @@ namespace prjEstacionamento.Sources.DAO
         private string Insert = @"INSERT INTO PrecoMensalista VALUES (@MensalistaId, @TipoVeiculoId, @Placa, @Valor, @DataInicioVigencia, @DataFimVigencia); SELECT SCOPE_IDENTITY();";
         private string Update = @"UPDATE PrecoMensalista SET TipoVeiculoId = @TipoVeiculoId, Placa = @Placa, Valor = @Valor, DataInicioVigencia = @DataInicioVigencia, DataFimVigencia = @DataFimVigencia WHERE Id = @Id";
         private string Delete = @"DELETE FROM PrecoMensalista WHERE Id = @Id";
-        private string Select = @"SELECT Id, MensalistaId, TipoVeiculoId, Placa, Valor, DataInicioVigencia, DataFimVigencia FROM PrecoMensalista";
-        private string SelectSpecific = @"SELECT MensalistaId, TipoVeiculoId, Placa, DataInicioVigencia, DataFimVigencia, Valor FROM PrecoMensalista WHERE Id = @Id";
-        private string SelectPlacas = @"SELECT MensalistaId, TipoVeiculoId, Placa, Valor, DataInicioVigencia, DataFimVigencia FROM PrecoMensalista WHERE MensalistaId = @MensalistaId and (Placa = @Placa or @Placa = '')";
+        private string Select = @"SELECT MensalistaId, TipoVeiculoId, Placa, Valor, DataInicioVigencia, DataFimVigencia FROM PrecoMensalista WHERE MensalistaId = @MensalistaId and (Placa = @Placa or @Placa = '')";
+        //private string SelectSpecific = @"SELECT MensalistaId, TipoVeiculoId, Placa, DataInicioVigencia, DataFimVigencia, Valor FROM PrecoMensalista WHERE Id = @Id";
+        private string SelectPlacas = @"SELECT DISTINCT MensalistaId, Placa FROM PrecoMensalista WHERE MensalistaId = @MensalistaId and Placa = @Placa";
 
         public daoGerenciamentoMensalista()
         {
@@ -68,7 +68,12 @@ namespace prjEstacionamento.Sources.DAO
                 var pIdMensalista = new SqlParameter("@MensalistaId", IdMensalista);
                 var pPlaca = new SqlParameter("@Placa", Placa);
 
-                base.comando.CommandText = SelectPlacas;
+                if (Placa == ""){
+                    base.comando.CommandText = Select;
+                } else{
+                    base.comando.CommandText = SelectPlacas;
+                }
+
                 base.comando.Parameters.Add(pIdMensalista);
                 base.comando.Parameters.Add(pPlaca);
                 base.conexao.Open();

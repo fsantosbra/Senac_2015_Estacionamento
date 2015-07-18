@@ -63,6 +63,7 @@
     <Compile Include="Sources\Class\CadastroParceiro.cs" />
     <Compile Include="Sources\Class\CadastroVeiculo.cs" />
     <Compile Include="Sources\Class\Endereco.cs" />
+    <Compile Include="Sources\Class\GerenciamentoMensalista.cs" />
     <Compile Include="Sources\Class\GrupoAcesso.cs" />
     <Compile Include="Sources\Class\GrupoPermissao.cs" />
     <Compile Include="Sources\Class\Mensalista.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Sources\Class\Usuario.cs" />
     <Compile Include="Sources\Class\Vagas.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
+    <Compile Include="Sources\DAO\daoGerenciamentoMensalista.cs" />
     <Compile Include="Sources\DAO\daoGrupoAcesso.cs" />
     <Compile Include="Sources\DAO\daoGrupoPermissao.cs" />
     <Compile Include="Sources\DAO\daoModelo.cs" />
@@ -262,7 +264,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
- 
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

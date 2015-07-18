@@ -160,6 +160,8 @@
             // 
             // grdLancamentos
             // 
+            this.grdLancamentos.AllowUserToAddRows = false;
+            this.grdLancamentos.AllowUserToDeleteRows = false;
             this.grdLancamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdLancamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdLancamentos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -189,6 +191,7 @@
             this.cbxPlaca.Name = "cbxPlaca";
             this.cbxPlaca.Size = new System.Drawing.Size(595, 21);
             this.cbxPlaca.TabIndex = 2;
+            this.cbxPlaca.SelectedValueChanged += new System.EventHandler(this.cbxPlaca_SelectedValueChanged);
             // 
             // lblMensalista
             // 
