@@ -240,7 +240,7 @@
     <EmbeddedResource Include="Sources\Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Documentacao\Cadastro de Mensalistas.docx" />
+    <None Include="Documentacao\Cadastro de Mensalistas.doc" />
     <None Include="Documentacao\Documentação - Design Técnico de Telas.docx" />
     <None Include="Documentacao\GerenciamentoMensalistas.bmpr" />
     <None Include="Documentacao\Sistema de Estacionamento - Pós Senac - 2015.docx" />
