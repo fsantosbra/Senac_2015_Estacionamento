@@ -10,19 +10,36 @@ namespace prjEstacionamento.Sources.Class
 {
     class Vagas
     {
-        public int TipoVeiculo { get; set; }
-        public int QtdTotalVagas   { get; set; }
-        public int QtdTotalMensalistas   { get; set; }
-        public daoVagas daoVagas { get; set; }
+        public int Id { get; set; }
+        public int TipoVeiculoId { get; set; }
+        public int QtdeVagasTotal { get; set; }
+        public int QtdeMensalista { get; set; }
+        public int QtdeVagasTotalCorrente { get; set; }
+        public int QtdeMensalistaCorrente { get; set; }
+        public string CommandString { get; set; }
 
+        public daoVagas daoVagas { get; set; }
+        
         public Vagas()
         {
-            this.daoVagas = new daoVagas();
+            daoVagas = new daoVagas();
         }
 
-        public void InserirVagas(Vagas vagas)
+        public int InserirVaga(Vagas vagas)
         {
-            this.daoVagas.InserirVagas(vagas);
+            return daoVagas.InserirVaga(vagas);
+        }
+
+        public DataTable ListarVagas()
+        {
+            return daoVagas.ListarVagas();
+        }
+
+        public DataTable ListarVagasTipo(Vagas Vagas)
+        {
+
+            return daoVagas.ListarVagasTipo(Vagas);
+            
         }
     }
 }

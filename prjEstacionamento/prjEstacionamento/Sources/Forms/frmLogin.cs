@@ -23,7 +23,7 @@ namespace prjEstacionamento.Sources.Forms
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
-
+            Menu menu = new Menu();
             if (!txtLogin.Text.Equals("mestre"))
             {
                 usuario = usuario.retornaUsuario(txtLogin.Text);
@@ -41,6 +41,8 @@ namespace prjEstacionamento.Sources.Forms
                     txtLogin.Focus();
                     return;
                 }
+                GrupoPermissao permissao = new GrupoPermissao();
+                menu.permissoes = permissao.ListarGrupoPermissao(usuario.idgrupo);
             }
             else
             {
@@ -48,12 +50,8 @@ namespace prjEstacionamento.Sources.Forms
                 usuario.idgrupo = -1;
             }
             txtLogin.Focus();
-
-            Menu menu = new Menu();
             menu.login = this;
             menu.idUsuario = usuario.Id;
-            GrupoPermissao permissao = new GrupoPermissao();
-            menu.permissoes = permissao.ListarGrupoPermissao(usuario.idgrupo);
             menu.Show();
             this.Visible = false;
         }

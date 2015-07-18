@@ -85,11 +85,17 @@
     <Compile Include="Sources\DAO\daoUsuario.cs" />
     <Compile Include="Sources\DAO\daoVagas.cs" />
     <Compile Include="Sources\DAO\daoVeiculos.cs" />
-    <Compile Include="Sources\Forms\ControleVagas.cs">
+    <Compile Include="Sources\Forms\frm_CadastroVagas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sources\Forms\ControleVagas.designer.cs">
-      <DependentUpon>ControleVagas.cs</DependentUpon>
+    <Compile Include="Sources\Forms\frm_CadastroVagas.designer.cs">
+      <DependentUpon>frm_CadastroVagas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\FrmControleVagas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\FrmControleVagas.designer.cs">
+      <DependentUpon>FrmControleVagas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -192,8 +198,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Sources\Forms\ControleVagas.resx">
-      <DependentUpon>ControleVagas.cs</DependentUpon>
+    <EmbeddedResource Include="Sources\Forms\frm_CadastroVagas.resx">
+      <DependentUpon>frm_CadastroVagas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\FrmControleVagas.resx">
+      <DependentUpon>FrmControleVagas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmCadastroVagas.resx">
       <DependentUpon>frmCadastroVagas.cs</DependentUpon>
@@ -253,6 +262,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+ 
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -262,23 +272,6 @@
     <Content Include="FontesSQL\modificacoesBaseDeDados.sql" />
     <Content Include="FontesSQL\prjEstacionamento.sql" />
     <Content Include="FontesSQL\STP_GravarLogEstacionamento.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

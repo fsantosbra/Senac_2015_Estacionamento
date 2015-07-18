@@ -37,11 +37,11 @@ namespace prjEstacionamento.Sources.Forms
         private void btnInserir_Click(object sender, EventArgs e)
         {
             var Vaga = new Vagas();
-            Vaga.TipoVeiculo = Convert.ToInt32(cbxTipoVeiculo.SelectedValue);
-            Vaga.QtdTotalVagas = Convert.ToInt32(txtTotalVagas.Text);
-            Vaga.QtdTotalMensalistas = Convert.ToInt32(txtQtdMensalistas.Text);
+            Vaga.TipoVeiculoId = Convert.ToInt32(cbxTipoVeiculo.SelectedValue);
+            Vaga.QtdeVagasTotal = Convert.ToInt32(txtTotalVagas.Text);
+            Vaga.QtdeMensalista = Convert.ToInt32(txtQtdMensalistas.Text);
 
-            Vaga.InserirVagas(Vaga);
+            Vaga.InserirVaga(Vaga);
             MessageBox.Show("Vagas adicionadas com sucesso!");
         }
 

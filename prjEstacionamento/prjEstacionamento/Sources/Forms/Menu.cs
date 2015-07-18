@@ -32,6 +32,12 @@ namespace prjEstacionamento
             frmCadastroVagas frmCadastroVagas = new frmCadastroVagas();
             frmCadastroVagas.MdiParent = this;
             frmCadastroVagas.Show();
+// daikiti
+//            this.IsMdiContainer = true;
+//            Frm_CadastroVagas Frm_CadastroVagas = new Frm_CadastroVagas();
+//            Frm_CadastroVagas.MdiParent = this;
+//            Frm_CadastroVagas.Show();
+// daikiti
         }
 
         private void cadastroDeDadosMestreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +81,10 @@ namespace prjEstacionamento
         {
             if (!temPermissao("Controle de Vagas"))
                 return;
+            this.IsMdiContainer = true;
+            FrmControleVagas FrmControleVagas = new FrmControleVagas();
+            FrmControleVagas.MdiParent = this;
+            FrmControleVagas.Show();
         }
 
         private void controleDeEntradaToolStripMenuItem_Click(object sender, EventArgs e)
