@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace prjEstacionamento.Sources.DAO
 {
@@ -203,6 +204,10 @@ namespace prjEstacionamento.Sources.DAO
                     usuario.senha = Convert.ToString(tabelaUsuarios.Rows[0]["SENHA"]);
                     usuario.idgrupo = Convert.ToInt32(tabelaUsuarios.Rows[0]["IDGRUPO"]);
                 }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

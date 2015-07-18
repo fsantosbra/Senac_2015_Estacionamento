@@ -23,10 +23,10 @@ namespace prjEstacionamento.Sources.Forms
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
-            usuario = usuario.retornaUsuario(txtLogin.Text);
 
             if (!txtLogin.Text.Equals("mestre"))
             {
+                usuario = usuario.retornaUsuario(txtLogin.Text);
                 if (Convert.ToString(usuario.Id) == String.Empty)
                 {
                     MessageBox.Show("Usuário ou senha inválidos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
