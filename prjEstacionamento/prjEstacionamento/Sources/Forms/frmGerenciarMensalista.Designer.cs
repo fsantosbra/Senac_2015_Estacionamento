@@ -30,6 +30,7 @@
         {
             this.tbsAcoes = new System.Windows.Forms.TabControl();
             this.tbsLancarPgto = new System.Windows.Forms.TabPage();
+            this.txtValor = new System.Windows.Forms.MaskedTextBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDataPgto = new System.Windows.Forms.Label();
@@ -37,13 +38,11 @@
             this.chkValorPersonalizado = new System.Windows.Forms.CheckBox();
             this.dtpDataPgto = new System.Windows.Forms.DateTimePicker();
             this.tabConsultarPgtos = new System.Windows.Forms.TabPage();
+            this.grdLancamentos = new System.Windows.Forms.DataGridView();
             this.cbxMensalista = new System.Windows.Forms.ComboBox();
             this.cbxPlaca = new System.Windows.Forms.ComboBox();
             this.lblMensalista = new System.Windows.Forms.Label();
             this.lblPlaca = new System.Windows.Forms.Label();
-            this.lblDescricaoModelo = new System.Windows.Forms.Label();
-            this.grdLancamentos = new System.Windows.Forms.DataGridView();
-            this.txtValor = new System.Windows.Forms.MaskedTextBox();
             this.tbsAcoes.SuspendLayout();
             this.tbsLancarPgto.SuspendLayout();
             this.tabConsultarPgtos.SuspendLayout();
@@ -80,6 +79,13 @@
             this.tbsLancarPgto.TabIndex = 0;
             this.tbsLancarPgto.Text = "Lançar Pagamento";
             this.tbsLancarPgto.UseVisualStyleBackColor = true;
+            // 
+            // txtValor
+            // 
+            this.txtValor.Location = new System.Drawing.Point(71, 43);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(200, 20);
+            this.txtValor.TabIndex = 15;
             // 
             // btnOk
             // 
@@ -147,20 +153,36 @@
             this.tabConsultarPgtos.Text = "Consultar Pagamentos";
             this.tabConsultarPgtos.UseVisualStyleBackColor = true;
             // 
+            // grdLancamentos
+            // 
+            this.grdLancamentos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdLancamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdLancamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdLancamentos.Location = new System.Drawing.Point(3, 3);
+            this.grdLancamentos.Name = "grdLancamentos";
+            this.grdLancamentos.Size = new System.Drawing.Size(396, 107);
+            this.grdLancamentos.TabIndex = 0;
+            // 
             // cbxMensalista
             // 
+            this.cbxMensalista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxMensalista.FormattingEnabled = true;
             this.cbxMensalista.Location = new System.Drawing.Point(76, 6);
             this.cbxMensalista.Name = "cbxMensalista";
-            this.cbxMensalista.Size = new System.Drawing.Size(179, 21);
+            this.cbxMensalista.Size = new System.Drawing.Size(327, 21);
             this.cbxMensalista.TabIndex = 1;
+            this.cbxMensalista.SelectedValueChanged += new System.EventHandler(this.cbxMensalista_SelectedValueChanged);
             // 
             // cbxPlaca
             // 
+            this.cbxPlaca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxPlaca.FormattingEnabled = true;
             this.cbxPlaca.Location = new System.Drawing.Point(76, 33);
             this.cbxPlaca.Name = "cbxPlaca";
-            this.cbxPlaca.Size = new System.Drawing.Size(179, 21);
+            this.cbxPlaca.Size = new System.Drawing.Size(327, 21);
             this.cbxPlaca.TabIndex = 2;
             // 
             // lblMensalista
@@ -181,37 +203,11 @@
             this.lblPlaca.TabIndex = 4;
             this.lblPlaca.Text = "Placa";
             // 
-            // lblDescricaoModelo
-            // 
-            this.lblDescricaoModelo.AutoSize = true;
-            this.lblDescricaoModelo.Location = new System.Drawing.Point(261, 36);
-            this.lblDescricaoModelo.Name = "lblDescricaoModelo";
-            this.lblDescricaoModelo.Size = new System.Drawing.Size(139, 13);
-            this.lblDescricaoModelo.TabIndex = 5;
-            this.lblDescricaoModelo.Text = "Breve Descrição do Modelo";
-            // 
-            // grdLancamentos
-            // 
-            this.grdLancamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdLancamentos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdLancamentos.Location = new System.Drawing.Point(3, 3);
-            this.grdLancamentos.Name = "grdLancamentos";
-            this.grdLancamentos.Size = new System.Drawing.Size(396, 107);
-            this.grdLancamentos.TabIndex = 0;
-            // 
-            // txtValor
-            // 
-            this.txtValor.Location = new System.Drawing.Point(71, 43);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(200, 20);
-            this.txtValor.TabIndex = 15;
-            // 
             // frmGerenciarMensalista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 203);
-            this.Controls.Add(this.lblDescricaoModelo);
             this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.lblMensalista);
             this.Controls.Add(this.cbxPlaca);
@@ -238,14 +234,13 @@
         private System.Windows.Forms.ComboBox cbxPlaca;
         private System.Windows.Forms.Label lblMensalista;
         private System.Windows.Forms.Label lblPlaca;
-        private System.Windows.Forms.Label lblDescricaoModelo;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblDataPgto;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.CheckBox chkValorPersonalizado;
         private System.Windows.Forms.DateTimePicker dtpDataPgto;
-        private System.Windows.Forms.DataGridView grdLancamentos;
         private System.Windows.Forms.MaskedTextBox txtValor;
+        private System.Windows.Forms.DataGridView grdLancamentos;
     }
 }
