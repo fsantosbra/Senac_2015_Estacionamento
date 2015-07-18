@@ -11,6 +11,21 @@
     <AssemblyName>prjEstacionamento</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,30 +60,51 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sources\Class\CadastroEntradaVeiculo.cs" />
+    <Compile Include="Sources\Class\CadastroParceiro.cs" />
     <Compile Include="Sources\Class\CadastroVeiculo.cs" />
     <Compile Include="Sources\Class\Endereco.cs" />
-    <Compile Include="Sources\Class\GerenciamentoMensalista.cs" />
+    <Compile Include="Sources\Class\GrupoAcesso.cs" />
+    <Compile Include="Sources\Class\GrupoPermissao.cs" />
     <Compile Include="Sources\Class\Mensalista.cs" />
     <Compile Include="Sources\Class\Modelo.cs" />
     <Compile Include="Sources\Class\TipoVeiculo.cs" />
     <Compile Include="Sources\Class\PrecoMensalista.cs" />
+    <Compile Include="Sources\Class\Usuario.cs" />
+    <Compile Include="Sources\Class\Vagas.cs" />
     <Compile Include="Sources\DAO\daoBase.cs" />
-    <Compile Include="Sources\DAO\daoGerenciamentoMensalista.cs" />
+    <Compile Include="Sources\DAO\daoGrupoAcesso.cs" />
+    <Compile Include="Sources\DAO\daoGrupoPermissao.cs" />
     <Compile Include="Sources\DAO\daoModelo.cs" />
+    <Compile Include="Sources\DAO\daoParceiros.cs" />
     <Compile Include="Sources\DAO\daoPrecoMensalista.cs" />
     <Compile Include="Sources\DAO\daoEndereco.cs" />
     <Compile Include="Sources\DAO\daoMensalista.cs" />
+    <Compile Include="Sources\DAO\daoSaidaVeiculo.cs" />
     <Compile Include="Sources\DAO\daoTipoVeiculo.cs" />
     <Compile Include="Sources\DAO\daoEntradaVeiculo.cs" />
+    <Compile Include="Sources\DAO\daoUsuario.cs" />
+    <Compile Include="Sources\DAO\daoVagas.cs" />
     <Compile Include="Sources\DAO\daoVeiculos.cs" />
-    <Compile Include="Sources\Forms\ControleVagas.cs">
+    <Compile Include="Sources\Forms\frm_CadastroVagas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sources\Forms\ControleVagas.designer.cs">
-      <DependentUpon>ControleVagas.cs</DependentUpon>
+    <Compile Include="Sources\Forms\frm_CadastroVagas.designer.cs">
+      <DependentUpon>frm_CadastroVagas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\FrmControleVagas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\FrmControleVagas.designer.cs">
+      <DependentUpon>FrmControleVagas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\Forms\frmCadastroVagas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmCadastroVagas.designer.cs">
+      <DependentUpon>frmCadastroVagas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Forms\frmControleEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +116,18 @@
     </Compile>
     <Compile Include="Sources\Forms\frmGerenciarMensalista.Designer.cs">
       <DependentUpon>frmGerenciarMensalista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\frmGrupoAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmGrupoAcesso.Designer.cs">
+      <DependentUpon>frmGrupoAcesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\frmGrupoPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmGrupoPermissao.Designer.cs">
+      <DependentUpon>frmGrupoPermissao.cs</DependentUpon>
     </Compile>
     <Compile Include="Sources\Forms\frmPrecoAvulso.cs">
       <SubType>Form</SubType>
@@ -105,11 +153,29 @@
     <Compile Include="Sources\Forms\frmTipoVeiculo.designer.cs">
       <DependentUpon>frmTipoVeiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sources\Forms\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\Frm_CadastroParceiros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\Frm_CadastroParceiros.designer.cs">
+      <DependentUpon>Frm_CadastroParceiros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sources\Forms\Frm_CadastroVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sources\Forms\Frm_CadastroVeiculo.designer.cs">
       <DependentUpon>Frm_CadastroVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Sources\Forms\Menu.cs">
       <SubType>Form</SubType>
@@ -132,8 +198,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Sources\Forms\ControleVagas.resx">
-      <DependentUpon>ControleVagas.cs</DependentUpon>
+    <EmbeddedResource Include="Sources\Forms\frm_CadastroVagas.resx">
+      <DependentUpon>frm_CadastroVagas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\FrmControleVagas.resx">
+      <DependentUpon>FrmControleVagas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmCadastroVagas.resx">
+      <DependentUpon>frmCadastroVagas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmControleEntrada.resx">
       <DependentUpon>frmControleEntrada.cs</DependentUpon>
@@ -143,6 +215,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmGerenciarMensalista.resx">
       <DependentUpon>frmGerenciarMensalista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmGrupoAcesso.resx">
+      <DependentUpon>frmGrupoAcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmGrupoPermissao.resx">
+      <DependentUpon>frmGrupoPermissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\frmPrecoAvulso.resx">
       <DependentUpon>frmPrecoAvulso.cs</DependentUpon>
@@ -156,13 +237,22 @@
     <EmbeddedResource Include="Sources\Forms\frmTipoVeiculo.resx">
       <DependentUpon>frmTipoVeiculo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Forms\Frm_CadastroParceiros.resx">
+      <DependentUpon>Frm_CadastroParceiros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\Frm_CadastroVeiculo.resx">
       <DependentUpon>Frm_CadastroVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Documentacao\Cadastro de Mensalistas.docx" />
     <None Include="Documentacao\Documentação - Design Técnico de Telas.docx" />
+    <None Include="Documentacao\GerenciamentoMensalistas.bmpr" />
+    <None Include="Documentacao\Sistema de Estacionamento - Pós Senac - 2015.docx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,16 +262,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+ 
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Documentacao\GerenciamentoMensalistas.png" />
     <Content Include="FontesSQL\modificacoesBaseDeDados.sql" />
     <Content Include="FontesSQL\prjEstacionamento.sql" />
     <Content Include="FontesSQL\STP_GravarLogEstacionamento.sql" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

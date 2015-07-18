@@ -27,10 +27,20 @@ namespace prjEstacionamento.Sources.Class
             return this.daoMensalista.InserirMensalista(mensalista);
         }
 
-        public DataTable ListarParametros()
+        public DataTable ListarMensalistas()
         {
             return this.daoMensalista.ListarMensalistas();
         }
-        
+
+
+        public DataTable FiltrarPesquisa(string nomeMensalista)
+        {
+            return this.daoMensalista.FiltrarPesquisa(nomeMensalista);
+        }
+
+        public DataTable FiltrarMensalista(object mensalistaId)
+        {
+            return this.daoMensalista.FiltrarMensalista(mensalistaId);
+        }
     }
 }

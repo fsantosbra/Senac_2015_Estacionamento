@@ -36,7 +36,8 @@ namespace prjEstacionamento.Sources.DAO
             }
             finally
             {
-
+                base.conexao.Close();
+                base.comando.Parameters.Clear();
             }
         }
     }
