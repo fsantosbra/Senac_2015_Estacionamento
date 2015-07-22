@@ -34,7 +34,7 @@ namespace prjEstacionamento.Sources.DAO
                                         ,(SELECT COUNT(MNS.ID) 
                                           FROM MENSALISTA MNS
                                           LEFT JOIN USOVAGA UV ON (UV.MENSALISTAID = MNS.ID)
-                                          LEFT JOIN MODELO MOD ON (MOD.ID = UV.MODELOID)
+                                          LEFT JOIN MODELO MOD ON (MOD.ID = UV.MODELOID AND MOD.TIPOVEICULOID = VG.TIPOVEICULOID)
                                           WHERE ATIVO IS NOT NULL) AS QTDEMENSALISTACORRENTE 
                                   FROM VAGAS VG";
 
