@@ -87,7 +87,7 @@
             this.dbg_Parceiros.Name = "dbg_Parceiros";
             this.dbg_Parceiros.Size = new System.Drawing.Size(680, 218);
             this.dbg_Parceiros.TabIndex = 5;
-            this.dbg_Parceiros.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dbg_Veiculos_MouseDoubleClick);
+            this.dbg_Parceiros.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dbg_Parceiros_MouseDoubleClick);
             // 
             // btn_Exluir
             // 
@@ -142,9 +142,9 @@
         private System.Windows.Forms.Label lbl_NomeParceiro;
         private System.Windows.Forms.Label lbl_Desconto;
         private System.Windows.Forms.TextBox txt_NomeParceiro;
-        private System.Windows.Forms.Button btn_Adicionar;
+        public System.Windows.Forms.Button btn_Adicionar;
         private System.Windows.Forms.DataGridView dbg_Parceiros;
-        private System.Windows.Forms.Button btn_Exluir;
+        public System.Windows.Forms.Button btn_Exluir;
         private System.Windows.Forms.TextBox txt_Desconto;
     }
 }

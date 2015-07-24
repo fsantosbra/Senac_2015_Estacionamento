@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace prjEstacionamento
 {
-    public partial class Frm_CadastroParceiro: Form
+    public partial class Frm_CadastroParceiro : Form
     {
         public Frm_CadastroParceiro()
         {
@@ -24,6 +24,12 @@ namespace prjEstacionamento
         {
             var Parceiro = new CadastroParceiros();
             Parceiro.Nome = txt_NomeParceiro.Text;
+            
+            if (txt_Desconto.Text.Trim() == "")
+            {
+                txt_Desconto.Text = "0.00";
+            }
+
             Parceiro.Desconto = Convert.ToDecimal(txt_Desconto.Text);
 
             if (txt_NomeParceiro.Text.Trim() == "")
@@ -37,26 +43,37 @@ namespace prjEstacionamento
                 MessageBox.Show("Favor digitar o valor do desconto!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             if (btn_Adicionar.Text == "Adicionar")
             {
                 Parceiro.InserirParceiro(Parceiro);
-                MessageBox.Show("Parceiro adicionado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);           
+                MessageBox.Show("Parceiro adicionado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarGridParceiros();
             }
             else if (btn_Adicionar.Text == "Alterar")
             {
                 int row = dbg_Parceiros.CurrentRow.Index;
-                Parceiro.Id = Convert.ToInt32(dbg_Parceiros[0,row].Value);
+                Parceiro.Id = Convert.ToInt32(dbg_Parceiros[0, row].Value);
                 Parceiro.AlterarParceiro(Parceiro);
                 btn_Adicionar.Text = "Adicionar";
                 btn_Exluir.Text = "Excluir";
                 dbg_Parceiros.Enabled = true;
                 MessageBox.Show("Parceiro alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarGridParceiros();
+            }
+            else
+            {
+                dbg_Parceiros.DataSource = Parceiro.ExibirParceiroPesquisa(Parceiro.Nome);
+                dbg_Parceiros.Columns["ID"].Visible = false;
+                dbg_Parceiros.Columns["NOMEPARCEIRO"].Width = 535;
+                dbg_Parceiros.Columns["DESCONTO"].Width = 100;
+                dbg_Parceiros.Columns["NOMEPARCEIRO"].HeaderText = "PARCEIRO";
+                dbg_Parceiros.ReadOnly = true;
             }
 
             txt_NomeParceiro.Text = "";
             txt_Desconto.Text = "";
-            CarregarGridParceiros();
+
         }
 
         public void CarregarGridParceiros()
@@ -96,28 +113,33 @@ namespace prjEstacionamento
             CarregarGridParceiros();
         }
 
-        private void dbg_Veiculos_MouseDoubleClick(object sender, MouseEventArgs e)
+
+        private void txt_Desconto_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 44)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dbg_Parceiros_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (btn_Adicionar.Text == "Pesquisar")
+            {
+                return;
+            }
+
             DialogResult confirma = MessageBox.Show("Confima a seleção do parceiro para alteração?", "Alterar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirma.Equals(DialogResult.Yes))
             {
                 int row = dbg_Parceiros.CurrentRow.Index;
                 txt_NomeParceiro.Text = dbg_Parceiros[1, row].Value.ToString();
                 txt_Desconto.Text = dbg_Parceiros[2, row].Value.ToString();
-                
+
                 dbg_Parceiros.Enabled = false;
                 btn_Adicionar.Text = "Alterar";
                 btn_Exluir.Text = "Cancelar";
             }
         }
-
-        private void txt_Desconto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar !=08 && e.KeyChar!= 44)
-            {
-                e.Handled = true;
-            }
-        }
-
     }
 }

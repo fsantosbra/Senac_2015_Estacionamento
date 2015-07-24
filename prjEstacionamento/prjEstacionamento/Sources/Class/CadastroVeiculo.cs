@@ -11,8 +11,8 @@ namespace prjEstacionamento.Sources.Class
     class CadastroVeiculo
     {
         public string Modelo { get; set; }
-        public int    Tipo   { get; set; }
-        public int Id        { get; set; }
+        public int Tipo { get; set; }
+        public int Id { get; set; }
         public daoVeiculos daoVeiculos { get; set; }
 
         public CadastroVeiculo()
@@ -38,6 +38,11 @@ namespace prjEstacionamento.Sources.Class
         public DataTable ExibirVeiculos()
         {
             return this.daoVeiculos.ExibirVeiculos();
+        }
+
+        public DataTable ExibirVeiculosPesquisa(string Modelo, int Tipo)
+        {
+            return this.daoVeiculos.ExibirVeiculosPesquisa(Modelo, Tipo);
         }
 
         public DataTable ExibirTipoVeiculos()

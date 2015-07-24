@@ -33,25 +33,35 @@ namespace prjEstacionamento
                 MessageBox.Show("Favor digitar um modelo!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             if (btn_Adicionar.Text == "Adicionar")
             {
                 Veiculo.InserirVeiculo(Veiculo);
-                MessageBox.Show("Veículo adicionado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);           
+                MessageBox.Show("Veículo adicionado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarGridVeiculos();
             }
             else if (btn_Adicionar.Text == "Alterar")
             {
                 int row = dbg_Veiculos.CurrentRow.Index;
-                Veiculo.Id = Convert.ToInt32(dbg_Veiculos[0,row].Value);
+                Veiculo.Id = Convert.ToInt32(dbg_Veiculos[0, row].Value);
                 Veiculo.AlterarVeiculo(Veiculo);
                 btn_Adicionar.Text = "Adicionar";
                 btn_Exluir.Text = "Excluir";
                 dbg_Veiculos.Enabled = true;
                 MessageBox.Show("Veículo alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarGridVeiculos();
+            }
+            else
+            {
+                dbg_Veiculos.DataSource = Veiculo.ExibirVeiculosPesquisa( Veiculo.Modelo, Veiculo.Tipo);
+                dbg_Veiculos.Columns["ID"].Visible = false;
+                dbg_Veiculos.Columns["Modelo"].Width = 535;
+                dbg_Veiculos.Columns["Tipo"].Width = 100;
+                dbg_Veiculos.ReadOnly = true;
             }
 
             txt_Modelo.Text = "";
-            CarregarGridVeiculos();
+
         }
 
         public void CarregarGridVeiculos()
@@ -99,13 +109,18 @@ namespace prjEstacionamento
 
         private void dbg_Veiculos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            if (btn_Adicionar.Text == "Pesquisar")
+            {
+                return;
+            }
+
             DialogResult confirma = MessageBox.Show("Confima a seleção do veículo para alteração?", "Alterar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirma.Equals(DialogResult.Yes))
             {
                 int row = dbg_Veiculos.CurrentRow.Index;
                 txt_Modelo.Text = dbg_Veiculos[1, row].Value.ToString();
                 cbx_Tipo.Text = dbg_Veiculos[2, row].Value.ToString();
-                
+
                 dbg_Veiculos.Enabled = false;
                 btn_Adicionar.Text = "Alterar";
                 btn_Exluir.Text = "Cancelar";

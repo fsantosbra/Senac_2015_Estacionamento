@@ -16,6 +16,7 @@ namespace prjEstacionamento.Sources.DAO
         private string Delete = @"DELETE FROM MODELO WHERE ID = @ID";
         private string SelectTipo = @"SELECT ID, TIPO FROM TIPOVEICULO";
         private string Select = @"SELECT M.ID, M.MODELO, TV.TIPO FROM MODELO M INNER JOIN TIPOVEICULO TV ON TV.ID = M.TIPOVEICULOID";
+        private string Pesquisa = @"SELECT M.ID, M.MODELO, TV.TIPO FROM MODELO M INNER JOIN TIPOVEICULO TV ON TV.ID = M.TIPOVEICULOID WHERE M.MODELO = @MODELO AND M.TIPOVEICULOID = @TIPO";
 
         public daoVeiculos()
         {
@@ -45,7 +46,7 @@ namespace prjEstacionamento.Sources.DAO
                 base.conexao.Close();
                 base.comando.Parameters.Clear();
             }
-            
+
         }
 
         public string AlterarVeiculo(CadastroVeiculo Veiculo)
@@ -53,8 +54,8 @@ namespace prjEstacionamento.Sources.DAO
             try
             {
                 var paramModelo = new SqlParameter("@MODELO", Veiculo.Modelo);
-                var paramTipo   = new SqlParameter("@TIPO", Veiculo.Tipo);
-                var paramId     = new SqlParameter("@Id", Veiculo.Id);
+                var paramTipo = new SqlParameter("@TIPO", Veiculo.Tipo);
+                var paramId = new SqlParameter("@Id", Veiculo.Id);
 
                 base.comando.CommandText = Update;
                 base.comando.Parameters.Add(paramModelo);
@@ -78,7 +79,7 @@ namespace prjEstacionamento.Sources.DAO
         {
             try
             {
-                var paramId     = new SqlParameter("@Id", Veiculo.Id);
+                var paramId = new SqlParameter("@Id", Veiculo.Id);
 
                 base.comando.CommandText = Delete;
                 base.comando.Parameters.Add(paramId);
@@ -116,6 +117,32 @@ namespace prjEstacionamento.Sources.DAO
             }
         }
 
+        public DataTable ExibirVeiculosPesquisa(string Modelo, int Tipo)
+        {
+            try
+            {
+                var tabelaVeiculos = new DataTable();
+                var paramModelo = new SqlParameter("@MODELO", Modelo);
+                var paramTipo = new SqlParameter("@TIPO", Tipo);
+
+
+                base.comando.CommandText = Pesquisa;
+                base.comando.Parameters.Add(paramModelo);
+                base.comando.Parameters.Add(paramTipo);
+
+                base.conexao.Open();
+                var dataReader = base.comando.ExecuteReader();
+
+                tabelaVeiculos.Load(dataReader);
+
+                return tabelaVeiculos;
+            }
+            finally
+            {
+
+            }
+        }
+
         public DataTable ExibirTipoVeiculos()
         {
             try
@@ -135,8 +162,8 @@ namespace prjEstacionamento.Sources.DAO
 
             }
         }
-}
+    }
 
-    
+
 
 }

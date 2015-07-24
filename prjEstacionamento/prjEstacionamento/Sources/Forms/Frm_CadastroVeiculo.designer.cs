@@ -143,8 +143,8 @@
         private System.Windows.Forms.Label lbl_Tipo;
         private System.Windows.Forms.ComboBox cbx_Tipo;
         private System.Windows.Forms.TextBox txt_Modelo;
-        private System.Windows.Forms.Button btn_Adicionar;
+        public System.Windows.Forms.Button btn_Adicionar;
         private System.Windows.Forms.DataGridView dbg_Veiculos;
-        private System.Windows.Forms.Button btn_Exluir;
+        public System.Windows.Forms.Button btn_Exluir;
     }
 }

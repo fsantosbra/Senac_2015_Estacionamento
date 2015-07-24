@@ -129,12 +129,26 @@ namespace prjEstacionamento
         {
             if (!temPermissao("Consulta de Veículos"))
                 return;
+            this.IsMdiContainer = true;
+            Frm_CadastroVeiculo frmCadastroVeiculo = new Frm_CadastroVeiculo();
+            frmCadastroVeiculo.MdiParent = this;
+            frmCadastroVeiculo.btn_Adicionar.Text = "Pesquisar";
+            frmCadastroVeiculo.Text = "Consulta de Veículos";
+            frmCadastroVeiculo.btn_Exluir.Visible = false;
+            frmCadastroVeiculo.Show();
         }
 
         private void parceirosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!temPermissao("Consulta de Parceiros"))
                 return;
+            this.IsMdiContainer = true;
+            Frm_CadastroParceiro frmCadastroParceiro = new Frm_CadastroParceiro();
+            frmCadastroParceiro.MdiParent = this;
+            frmCadastroParceiro.btn_Adicionar.Text = "Pesquisar";
+            frmCadastroParceiro.Text = "Consulta de Parceiros";
+            frmCadastroParceiro.btn_Exluir.Visible = false;
+            frmCadastroParceiro.Show();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

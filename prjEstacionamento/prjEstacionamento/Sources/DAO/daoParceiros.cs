@@ -15,6 +15,7 @@ namespace prjEstacionamento.Sources.DAO
         private string Update = @"UPDATE P SET NOMEPARCEIRO = @NOME, DESCONTO = @DESCONTO FROM PARCEIROS P WHERE ID = @ID";
         private string Delete = @"DELETE FROM PARCEIROS WHERE ID = @ID";
         private string Select = @"SELECT P.ID, P.NOMEPARCEIRO, P.DESCONTO FROM PARCEIROS P";
+        private string Pesquisa = @"SELECT P.ID, P.NOMEPARCEIRO, P.DESCONTO FROM PARCEIROS P WHERE P.NOMEPARCEIRO = @NOME";
 
         public daoParceiros()
         {
@@ -44,16 +45,16 @@ namespace prjEstacionamento.Sources.DAO
                 base.conexao.Close();
                 base.comando.Parameters.Clear();
             }
-            
+
         }
 
         public string AlterarParceiro(CadastroParceiros Parceiro)
         {
             try
             {
-                var paramNome     = new SqlParameter("@NOME", Parceiro.Nome);
+                var paramNome = new SqlParameter("@NOME", Parceiro.Nome);
                 var paramDesconto = new SqlParameter("@DESCONTO", Parceiro.Desconto);
-                var paramId       = new SqlParameter("@Id", Parceiro.Id);
+                var paramId = new SqlParameter("@Id", Parceiro.Id);
 
                 base.comando.CommandText = Update;
                 base.comando.Parameters.Add(paramNome);
@@ -114,8 +115,31 @@ namespace prjEstacionamento.Sources.DAO
 
             }
         }
-}
 
-    
+        public DataTable ExibirParceiroPesquisa(string Nome)
+        {
+            try
+            {
+                var tabelaParceiro = new DataTable();
+                var paramNome = new SqlParameter("@NOME", Nome);
+
+                base.comando.CommandText = Pesquisa;
+                base.comando.Parameters.Add(paramNome);
+
+                base.conexao.Open();
+                var dataReader = base.comando.ExecuteReader();
+
+                tabelaParceiro.Load(dataReader);
+
+                return tabelaParceiro;
+            }
+            finally
+            {
+
+            }
+        }
+    }
+
+
 
 }

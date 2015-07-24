@@ -10,9 +10,9 @@ namespace prjEstacionamento.Sources.Class
 {
     class CadastroParceiros
     {
-        public string Nome    { get; set; }
+        public string Nome { get; set; }
         public decimal Desconto { get; set; }
-        public int Id         { get; set; }
+        public int Id { get; set; }
         public daoParceiros daoParceiros { get; set; }
 
         public CadastroParceiros()
@@ -38,6 +38,11 @@ namespace prjEstacionamento.Sources.Class
         public DataTable ExibirParceiros()
         {
             return this.daoParceiros.ExibirParceiros();
+        }
+
+        public DataTable ExibirParceiroPesquisa(string Nome)
+        {
+            return this.daoParceiros.ExibirParceiroPesquisa(Nome);
         }
     }
 }
